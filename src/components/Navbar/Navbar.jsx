@@ -1,8 +1,8 @@
 import React,{useState} from "react"
-import {AiFillHeart} from "react-icons/ai"
+import { Link } from "react-router-dom"
+import {AiFillHeart,AiOutlineMenu,AiOutlineClose} from "react-icons/ai"
 import {MdOutlineShoppingBag} from "react-icons/md"
-import {AiOutlineMenu} from "react-icons/ai"
-import {AiOutlineClose} from "react-icons/ai"
+
 
 function Navbar () {
 
@@ -51,9 +51,9 @@ function Navbar () {
                     </button>
                 </div>
                 </div>
-                <a href="#" className="w-32 lg:hidden">
+                <Link to="/" className="w-32 lg:hidden">
                         <img className="w-full object-cover " src="./assets/images/negarshop-logo.png" />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>

@@ -1,44 +1,6 @@
-@font-face{
-    font-family: "iranSans-Regular";
-    src: url("./fonts/ttf/IRANSans-Regular.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Regular.woff") format("woff");
-}
-@font-face{
-    font-family: "iranSans-Medium";
-    src: url("./fonts/ttf/IRANSans-Medium.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Medium.woff") format("woff");
-}
-@font-face{
-    font-family: "iranSans-DemiBold";
-    src: url("./fonts/ttf/IRANSans-DemiBold.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-DemiBold.woff") format("woff");
-}
-@font-face{
-    font-family: "iranSans-Bold";
-    src: url("./fonts/ttf/IRANSans-Bold.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Bold.woff") format("woff");
-}
-@font-face{
-    font-family: "iranSans-Black";
-    src: url("./fonts/ttf/IRANSans-Black.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Black.woff") format("woff");
-}
+@import "styles/font.css";
+@import "styles/custom.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.swiper-pagination-bullet {
-    background: #fff;
-    width: 10px;
-    height: 10px;
-    opacity: 0.5;
-    border-radius: 10px;
-    margin: 3px;
-    transition: 0.2s;
-}
-
-.swiper-pagination-bullet-active{
-    opacity: 1;
-    width: 20px;
-}

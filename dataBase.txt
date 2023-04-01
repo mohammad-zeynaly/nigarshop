@@ -1,0 +1,26 @@
+const discountProduct = [
+        {id: 1, img:'./assets/images/discount/discount-1.jpg', name:'گوشی موبایل اپل مدل iPhone 13 Pro ظرفیت 256GB دو سیم کارت',price:' ۱۲,۰۰۰,۰۰۰'},
+        {id: 2, img:'./assets/images/discount/discount-2.jpg', name:'گوشی موبایل سامسونگ مدل S20 FE 5G رم 8GB حافظه داخلی 128GB دو سیم کارته',price:'۱۶,۰۰۰,۰۰۰'},
+        {id: 3, img:'./assets/images/discount/discount-3.jpg', name:'گوشی موبایل سامسونگ Galaxy Z Fold2 رم 12GB حافظه 256GB با قابلیت 4G',price:' ۴۲,۰۰۰,۰۰۰'},
+        {id: 4, img:'./assets/images/discount/discount-4.jpg', name:'گوشی موبایل اپل مدل iPhone 13 ظرفیت 128GB دو سیم کارت',price:'۳۶,۰۰۰,۰۰۰'},
+        {id: 5, img:'./assets/images/discount/discount-5.jpg', name:'گوشی موبایل سامسونگ Galaxy Note 20 Ultra 5G ظرفیت 256 گیگابایت دو سیم کارت',price:'۳۳,۰۰۰,۰۰۰'},
+]
+
+
+
+const adsItems = [
+        {id:1,img:'./assets/images/ads/ads-1.jpg'},
+        {id:2,img:'./assets/images/ads/ads-2.jpg'},
+        {id:3,img:'./assets/images/ads/ads-3.jpg'},
+        {id:4,img:'./assets/images/ads/ads-4.jpg'},
+]
+
+
+
+const cosmeticsProduct = [
+        {id:1,img:"./assets/images/cosmeticsProduct/cosmeticsProduct-1.jpg",name:"کرم مرطوب کننده سافت نیوا 300 میلی لیتری (100 میل مجانی)",price:" ۲۰,۰۰۰"},
+        {id:2,img:"./assets/images/cosmeticsProduct/cosmeticsProduct-2.jpg",name:"کرم مرطوب کننده نئودرم حاوی ویتامین E و B5 مناسب انواع پوست 50 میل",price:" ۴۰,۰۰۰"},
+        {id:3,img:"./assets/images/cosmeticsProduct/cosmeticsProduct-3.jpg",name:"کرم مرطوب کننده نئودرم حاوی ویتامین E و B5 مناسب انواع پوست 50 میل",price:" ۶۵,۰۰۰"},
+        {id:4,img:"./assets/images/cosmeticsProduct/cosmeticsProduct-4.jpg",name:"موزن گوش و بینی و ابرو فیلیپس مدل NT1700 سری 1000",price:" ۱۲۰,۰۰۰"},
+        {id:5,img:"./assets/images/cosmeticsProduct/cosmeticsProduct-5.jpg",name:"ادو پرفیوم زنانه فراگرنس ورد مدل Diva Glamorous Girl حجم 100 میل",price:"۳۲۰,۰۰۰"},
+]

@@ -1,6 +1,7 @@
 import React from "react"
 import {FaSearch } from "react-icons/fa"
 import {FaUserAlt} from "react-icons/fa"
+import { Link } from "react-router-dom";
 
 function Topbar () {
 
@@ -8,9 +9,9 @@ function Topbar () {
         <section className="topbar my-5 hidden lg:block">
             <div className="container">
                 <div className="flex justify-between items-center">
-                    <a href="#" className="w-32">
+                    <Link to="/" className="w-32">
                         <img className="w-full object-cover " src="./assets/images/negarshop-logo.png" />
-                    </a>
+                    </Link>
                     <div className="w-[35rem] flex items-center relative">
                         <input className="py-4 px-4 focus:border-none focus:outline-none rounded-[20px] font-iranSansRegular text-sm w-full" type="text" placeholder="جستجو محصولات" />
                         <button className="absolute left-0 ml-2 bg-[#999999] p-[14px] rounded-[20px]">

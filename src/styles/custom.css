@@ -1,0 +1,19 @@
+.swiper-pagination-bullet {
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    opacity: 0.5;
+    border-radius: 10px;
+    margin: 3px;
+    transition: 0.2s;
+}
+
+.swiper-pagination-bullet-active{
+    opacity: 1;
+    width: 20px;
+}
+@media screen and (max-width:576px) {
+    .swiper-pagination{
+        display:none;
+    }
+}

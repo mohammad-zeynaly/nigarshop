@@ -15,17 +15,21 @@ function Slider () {
     ])
 
     return(
-    <div className="container mt-10">  
+        <section className="slider">
+            <div className="container mt-10">  
 
-        <Swiper className="rounded-[20px] w-full" modules={[Pagination]} slidesPerView={1} pagination={{ clickable: true }} 
-        loop={true} grabCursor={true} autoplay={{delay:5000,disableOnInteraction:false}}>
-            {slide.map(slider => (
-                <SwiperSlide key={slider.id} className="overflow-hidden w-full"><img className="w-full object-cover" src={slider.img} alt="slider image" /></SwiperSlide>
-            ))}
-        </Swiper>
+                <Swiper className="rounded-[20px] w-full" modules={[Pagination]} slidesPerView={1} pagination={{ clickable: true }} 
+                loop={true} grabCursor={true} autoplay={{delay:5000,disableOnInteraction:false}}>
+                    {slide.map(slider => (
+                    <SwiperSlide key={slider.id} className="overflow-hidden"><img className="w-full object-cover h-[170px] sm:h-full" src={slider.img} alt="slider image" /></SwiperSlide>
+                    ))}
+                </Swiper>
         
-    </div>
+            </div>
+        </section>
     )
+
+    
 }
 
 export default Slider;
