@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from "react";
+import useFetch from "../../Hooks/useFetch";
 import DiscountItem from "./DiscountItem";
 
 import SwiperCore,{Autoplay} from "swiper";
@@ -10,22 +11,17 @@ SwiperCore.use([Autoplay])
 function Discount () {
 
     const [discountProduct,setDiscountProduct] = useState([])
+    const [allProduct] = useFetch()
 
-    // Request Get To Firebase 
-    const fetchGetRequest = async () => {
-       await fetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/discountProduct.json")
-       .then(response => response.json())
-       .then(data => {
 
-       let productDiscount = Object.entries(data)
-        setDiscountProduct(productDiscount[0][1])
-        
-       })
-    }
+    const filterDiscountProduct = allProduct.filter(discount=> (
+        discount.categories === "discountProduct"
+    ))
+
 
     useEffect( () => {
-        fetchGetRequest()
-    },[])
+        setDiscountProduct(filterDiscountProduct)
+    },[allProduct])
 
     
     return(

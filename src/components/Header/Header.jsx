@@ -4,10 +4,10 @@ import Navbar from "../Navbar/Navbar"
 
 function Header () {
     return(
-        <>
+        <header className="header">
         <Topbar />
         <Navbar />        
-        </>
+        </header>
     )
 }
 

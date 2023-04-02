@@ -1,9 +1,8 @@
-import Home from "./components/Home/Home"
+import Home from "./components/Home/Home";
+
 let routes = [
-    // {path: '/',element: <App />}.
     {path: '/',element: <Home />},
     {path:'/productdetails/:productId',element:<h1>Product Details</h1>}
-
 ]
 
 

@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from "react"
+import useFetch from "../../Hooks/useFetch";
 import Products from "../Products/Products"
 import ProductItem from "../ProductItem/ProductItem";
 
@@ -14,22 +15,20 @@ function NewProduct () {
     const [productsTemplate,setProductsTemplate] = useState([
         {id:1,name:'جدیدترین محصولات',link:'/'}
     ]);
+
+
     const [newProducts,setNewProducts] = useState([])
+    const [allProduct] = useFetch()
 
-    // Request Get To Firebase 
-    const fetchGetRequest = async () => {
-    await fetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/discountProduct.json")
-    .then(response => response.json())
-    .then((data) => {
-            let newProduct = Object.entries(data)
-            setNewProducts(newProduct[0][1])
-        })
-     }
-
+    // Filtering Product
+    const filterNewProduct = allProduct.filter(discount=> (
+        discount.categories === "discountProduct"
+    ))
 
     useEffect(() => {
-        fetchGetRequest()
-    },[])
+        setNewProducts(filterNewProduct)
+    },[allProduct])
+
 
 
     return(

@@ -702,6 +702,11 @@ video {
   margin-right: auto;
 }
 
+.my-2{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .my-3{
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -752,12 +757,12 @@ video {
   margin-top: 0.5rem;
 }
 
-.mt-6{
-  margin-top: 1.5rem;
-}
-
 .mt-3{
   margin-top: 0.75rem;
+}
+
+.mt-6{
+  margin-top: 1.5rem;
 }
 
 .block{
@@ -798,6 +803,10 @@ video {
 
 .w-16{
   width: 4rem;
+}
+
+.w-28{
+  width: 7rem;
 }
 
 .w-32{
@@ -934,11 +943,6 @@ video {
 .bg-\[\#dedede\]{
   --tw-bg-opacity: 1;
   background-color: rgb(222 222 222 / var(--tw-bg-opacity));
-}
-
-.bg-primary{
-  --tw-bg-opacity: 1;
-  background-color: rgb(101 31 255 / var(--tw-bg-opacity));
 }
 
 .bg-white{
@@ -1085,6 +1089,11 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.filter{
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition-all{

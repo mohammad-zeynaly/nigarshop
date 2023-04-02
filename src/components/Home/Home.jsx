@@ -6,11 +6,15 @@ import NewProduct from "../NewProduct/NewProduct"
 import Ads from "../Ads/Ads";
 import CosmeticsProduct from "../CosmeticsProduct/CosmeticsProduct";
 import ClothesProduct from "../ClothesProduct/ClothesProduct";
+import Brands from "../Brands/Brands"
+
 
 function Home () {
+
     
     return(
         <>
+        <main className="main">
         <Slider/>
         <Introduction/>
         <Discount/>
@@ -18,6 +22,8 @@ function Home () {
         <Ads/>
         <CosmeticsProduct/>
         <ClothesProduct/>
+        <Brands></Brands>
+        </main>
         </>
     )
 }

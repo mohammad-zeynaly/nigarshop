@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from "react"
+import useFetch from "../../Hooks/useFetch";
 import Products from "../Products/Products";
 import ProductItem from "../ProductItem/ProductItem";
 
@@ -16,22 +17,17 @@ function ClothesProduct () {
     ])
 
     const [clothesProduct,setClothesProduct] = useState([])
+    const [allProduct] = useFetch()
 
 
-    const fetchGetRequest = async () => {
+    const filterClothesProduct = allProduct.filter(discount=> (
+        discount.categories === "clothesProduct"
+    ))
 
-        await fetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/clothesProduct.json")
-        .then(response => response.json())
-        .then(data => {
-           let clothesProducts = Object.entries(data);
 
-           setClothesProduct(clothesProducts[0][1])
-        })
-    }
-
-    useEffect(() => {
-        fetchGetRequest()
-    },[])
+    useEffect( () => {
+        setClothesProduct(filterClothesProduct)
+    },[allProduct])
 
     
     return(
