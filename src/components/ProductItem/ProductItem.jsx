@@ -6,9 +6,9 @@ import {Link} from "react-router-dom";
 
 function ProductItem (props) {
     return(
-        <>
-        <Link className="flex flex-col " to={`/productdetails:/${props.id}`}>
-        <div className="w-[13rem] xl:w-56 mx-auto">
+        <div className="flex flex-col bg-white rounded-[20px]">
+        <Link className="flex flex-col " to={`/productDetails/${props.id}`}>
+        <div className="w-[13rem] xl:w-56 mx-auto my-4">
             <img className="w-full object-cover" src={props.img} />
         </div>
         </Link>
@@ -23,7 +23,7 @@ function ProductItem (props) {
             <span className="mx-3 text-[#7a7a7a]" title=" مشاهده سریع محصول ">  <AiOutlineSearch className="w-[1.5rem] h-[1.5rem]"/></span>
             <span className="mx-3 text-[#7a7a7a]" title="افزودن به علاقه مندی ها">  <AiOutlineHeart className="w-[1.5rem] h-[1.5rem]"/></span>
         </div>
-        </>
+        </div>
     )
 }
 

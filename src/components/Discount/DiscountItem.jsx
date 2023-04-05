@@ -10,7 +10,7 @@ function DiscountItem (props) {
 
     return(
         <>
-            <Link className="flex flex-col " to={`/productdetails:/${props.id}`}>
+            <Link className="flex flex-col " to={`/productdetails/${props.id}`}>
                 <div className="w-[13rem] xl:w-56 mx-auto">
                     <img className="w-full object-cover" src={props.img} />
                 </div>

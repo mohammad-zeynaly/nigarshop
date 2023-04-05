@@ -23,42 +23,8 @@ function useFetch () {
         fetchGetRequest()
     },[])
 
-    useEffect(() => {
-        console.log('state allProduct',allProduct)
-
-    },[allProduct])
-
-    console.log("return[allProduct]");
     return[allProduct]
 }
     
 
 export default useFetch;
-
-
-
-/*
-
-     // Filtering AllProducts
-     discountProduct = allProduct.filter(discount=> (
-        discount.categories === "discountProduct"
-    ))
-    
-     adsItems = allProduct.filter(ads=> (
-        ads.categories === "adsItems"
-    ))
-    
-     cosmeticsProduct = allProduct.filter(cosmetics=> (
-        cosmetics.categories === "cosmeticsProduct"
-    ))
-    
-     clothesProduct = allProduct.filter(clothes=> (
-        clothes.categories === "clothesProduct"
-    ))
-    
-     brands = allProduct.filter(brand=> (
-        brand.categories === "brands"
-    ))
-
-
-*/

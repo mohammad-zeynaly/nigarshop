@@ -17,3 +17,15 @@
         display:none;
     }
 }
+
+.active svg{
+    fill: #651FFF;
+    stroke: #651FFF;
+}
+
+.product-category .active{
+    color: #fff;
+    background-color: #651FFF;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+}
