@@ -13,7 +13,7 @@ function ProductItem (props) {
         </div>
         </Link>
         <div className="max-w-[16rem] mx-auto text-center">
-            <Link to={`/productdetails:/${props.id}`} className="text-[#666] hover:text-primary">
+            <Link to={`/productDetails/${props.id}`} className="text-[#666] hover:text-primary">
             <h4 className="text-sm font-iranSansBold overflow-hidden text-ellipsis whitespace-nowrap mt-3">{props.name}</h4>
             </Link>
             <span className="text-primary block mt-2 font-iranSansBold text-sm">{props.price} تومان</span>

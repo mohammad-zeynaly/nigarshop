@@ -26,7 +26,7 @@ function ProductCategory () {
 
     useEffect(() =>{
         setCategoryProduct(mainProducts)
-    },[allProducts])
+    },[allProducts,params])
 
     const menuIemHandler = (item) => {
         setActiveMenuItem(item)

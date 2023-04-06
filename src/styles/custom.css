@@ -7,7 +7,6 @@
     margin: 3px;
     transition: 0.2s;
 }
-
 .swiper-pagination-bullet-active{
     opacity: 1;
     width: 20px;
@@ -17,12 +16,22 @@
         display:none;
     }
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
 
+input[type=number] {
+    -moz-appearance:textfield;
+}
+.menu__item .active{
+    color: #651FFF;
+}
 .active svg{
     fill: #651FFF;
     stroke: #651FFF;
 }
-
 .product-category .active{
     color: #fff;
     background-color: #651FFF;

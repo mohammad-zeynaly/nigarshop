@@ -20,9 +20,9 @@ function Topbar () {
                     </div>
                     <div className="flex items-center">
                         <span className="text-[#666] text-sm ml-3 font-iranSansBold">حساب کاربری</span>
-                        <button className="bg-[#dedede] p-[14px] rounded-[20px] group hover:bg-primary">
+                        <Link to="/myAccount" className="bg-[#dedede] p-[14px] rounded-[20px] group hover:bg-primary">
                         <FaUserAlt className="text-[#888] w-[1.1rem] h-[1.1rem] group-hover:text-white"/>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
