@@ -2,12 +2,13 @@ import React,{useState,useEffect} from "react"
 
     
 
-function useFetch () {
+function useFetch (props) {
 
     const [allProduct,setAllProduct] = useState([])
 
     const fetchGetRequest= async () => {
-        await fetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
+        
+        await fetch(props)
         .then(response => response.json())
         .then((data)  => {
 
@@ -16,6 +17,9 @@ function useFetch () {
             setAllProduct(Object.entries(data)[0][1])
         
             console.log('Request Get ', allProducts)
+        })
+        .catch(error => {
+            console.warn("Failed In Request => ", error)
         })
     }
 

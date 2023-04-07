@@ -11,7 +11,7 @@ SwiperCore.use([Autoplay])
 function Discount () {
 
     const [discountProduct,setDiscountProduct] = useState([])
-    const [allProduct] = useFetch()
+    const [allProduct] = useFetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
 
 
     const filterDiscountProduct = allProduct.filter(discount=> (

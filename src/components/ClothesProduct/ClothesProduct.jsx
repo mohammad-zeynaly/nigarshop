@@ -17,7 +17,7 @@ function ClothesProduct () {
     ])
 
     const [clothesProduct,setClothesProduct] = useState([])
-    const [allProduct] = useFetch()
+    const [allProduct] = useFetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
 
 
     const filterClothesProduct = allProduct.filter(discount=> (

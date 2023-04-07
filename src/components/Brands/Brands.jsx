@@ -9,7 +9,7 @@ SwiperCore.use([Autoplay])
 function Brands () {
 
     const [brands,setBrands] = useState([])
-    const [allProduct] = useFetch()
+    const [allProduct] = useFetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
 
     const filterBrands = allProduct.filter(discount=> (
         discount.categories === "brands"

@@ -1,16 +1,21 @@
-import Home from "./components/Home/Home";
-import ProductCategory from "./components/ProductCategory/ProductCategory";
-import ProductDetails from "./components/ProductDetails/ProductDetails";
-import MyAccount from "./components/MyAccount/MyAccount"
-import NotFound from "./components/NotFound/NotFound"
+import Home from "./pages/Home/Home";
+import ProductCategory from "./pages/ProductCategory/ProductCategory";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import MyAccount from "./pages/MyAccount/MyAccount";
+import ShoppingCart from "./pages/ShoppingCart/ShoppingCart";
+import Search from "./pages/Search/Search"
+import NotFound from "./pages/NotFound/NotFound";
 
 
 let routes = [
+    
     {path: '/',element: <Home />},
     {path:'/productCategory/:productType',element:<ProductCategory />},
     {path:'/productDetails/:productId',element: <ProductDetails/>},
     {path:'/myAccount',element: <MyAccount/>},
-    {path:'*',element:<NotFound/>}
+    {path:'/shoppingCart',element:<ShoppingCart/>},
+    {path:"/search",element:<Search/>},
+    {path:'*',element:<NotFound/>},
 
 ]
 

@@ -1,13 +1,13 @@
 import React,{useState,useEffect} from "react"
-import ProductItem from "../ProductItem/ProductItem";
+import ProductItem from "../../components/ProductItem/ProductItem";
 import { useParams } from "react-router";
 import useFetch from "../../Hooks/useFetch";
 
 
 function ProductCategory () {
-
+    
     const params = useParams()
-    const [allProducts] = useFetch()
+    const [allProducts] = useFetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
     const [activeMenuItem,setActiveMenuItem] = useState(0)
 
     const [menus,setMenus] = useState([

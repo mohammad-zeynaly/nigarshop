@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from "react"
+import useFetch from "../../Hooks/useFetch"
 import App from "../../App"
 import { Link,NavLink } from "react-router-dom"
 import {AiFillHeart,AiOutlineMenu,AiOutlineClose} from "react-icons/ai"
@@ -7,7 +8,11 @@ import {MdOutlineShoppingBag} from "react-icons/md"
 
 function Navbar () {
 
-    const [statusMenu,setStatusMenu] = useState(false)
+    const [statusMenu,setStatusMenu] = useState(false)    
+    const cartData = JSON.parse(localStorage.getItem("cartProduct"))
+    const [allProductCart,setAllProductCart] = useState([])
+
+
     const [menuItems,setMenuItems] = useState([
         {id:1, title:'صفحه اصلی', href:'/'},
         {id:2, title:'کالای دیجیتال', href:'productCategory/discountProduct'},
@@ -18,16 +23,16 @@ function Navbar () {
         {id:7, title:'لوازم آرایشی', href:'productCategory/cosmeticsProduct'},
     ])
     
-    const statusMenuHandler = () => {
-        setStatusMenu(prev => !prev)
-    }
+    useEffect(() => {
+        setAllProductCart(cartData)
+    },[])
 
     return(
         <>
         <nav className="mt-6">
             <div className="container">
                 <div className="flex flex-row-reverse lg:flex-row justify-between items-center">
-                    <span className="lg:hidden cursor-pointer" onClick={statusMenuHandler}>
+                    <span className="lg:hidden cursor-pointer" onClick={prev => !prev}>
                         {statusMenu ? (
                         
                             <AiOutlineClose className="w-[1.3rem] h-[1.3rem]"/>
@@ -51,23 +56,34 @@ function Navbar () {
                     <li className="mb-2 px-5 group hover:bg-[#f5f5f5] py-2"><a className="text-[#666]  group-hover:text-[#202124]" href="#">رویه ارسال سفارش</a></li>
                     <li className="mb-2 px-5 group hover:bg-[#f5f5f5] py-2"><a className="text-[#666]  group-hover:text-[#202124]" href="#">شیوه‌های پرداخت</a></li>
                 </ul>
+
                 <div className="hidden lg:flex items-center">
+
                 <div className="ml-4">
                     <button className="bg-[#999999] p-4 rounded-[20px] text-white">
                         <AiFillHeart className="w-[1.3rem] h-[1.3rem] "/>
                     </button>
                 </div>
+
                 <div className="">
-                    <Link to="" className="bg-[#60BD10] text-white flex items-center justify-center rounded-[20px] p-4">
+                    <Link to="/shoppingCart" className="bg-[#60BD10] text-white flex items-center justify-center rounded-[20px] p-4">
                     <MdOutlineShoppingBag className="w-[1.3rem] h-[1.3rem]"/>
                     <span className="text-sm mx-3 font-iranSansDemiBold">سبد خرید</span>
+                    {allProductCart !== null ? (
+                    <span className="text-xs bg-white text-[#60BD10] rounded-full py-[3px] px-2">{allProductCart.length}</span>
+                    ):(
                     <span className="text-xs bg-white text-[#60BD10] rounded-full py-[3px] px-2">0</span>
+                    )
+                    }
                     </Link>
                 </div>
+
                 </div>
+
                 <Link to="/" className="w-32 lg:hidden">
                         <img className="w-full object-cover " src="./assets/images/negarshop-logo.png" />
-                    </Link>
+                </Link>
+
                 </div>
             </div>
         </nav>

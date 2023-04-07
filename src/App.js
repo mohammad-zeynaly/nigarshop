@@ -12,18 +12,14 @@ function App(props) {
   const routers = useRoutes(routes)
   const location = useLocation()
 
-  useEffect(() => {
-    
-  },[])
-
-
   return (
-    <div className={`font-iranSansMedium bg-[#EEEEEE] overflow-x-hidden `}>
+    <div className={`font-iranSansMedium ${location.pathname === "/search" ? "bg-white" : "bg-[#EEEEEE]"} overflow-x-hidden `}>
 
-    {location.pathname === "/myAccount" ? "" : <Header/>}
+    {location.pathname === "/myAccount" || location.pathname === "/search" ? "" : <Header/>}
     {routers}
-    {location.pathname === "/myAccount" ? "" : <Footer/>}
+    {location.pathname === "/myAccount" || location.pathname === "/search" ? "" : <Footer/>}
     <BottomMenu/>
+    
     </div>
   );
 }

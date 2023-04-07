@@ -8,8 +8,9 @@ import {AiOutlinePlus,AiOutlineMinus} from "react-icons/ai"
 
 function ProductDetails () {
 
+    const persian = new Intl.NumberFormat('fa')
     const params = useParams()
-    const [allProducts] = useFetch()
+    const [allProducts] = useFetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
 
     const [productDetail ,setProductDetail] = useState([])
     const[count,setCount] = useState(1)
@@ -65,7 +66,7 @@ function ProductDetails () {
                         </div>
                         <div className="flex justify-between items-center mt-4">
                             <span>قیمت:</span>
-                            <span className="text-primary font-iranSansBold"> {productDetail.price} تومان </span>
+                            <span className="text-primary font-iranSansBold"> {persian.format(productDetail.price)} تومان </span>
                         </div>
                         <div className="flex justify-between items-center mt-6">
                             <div className="flex items-center relative">
