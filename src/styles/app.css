@@ -1,36 +1,36 @@
 @font-face{
   font-family: "iranSans-Regular";
 
-  src: url("./fonts/ttf/IRANSans-Regular.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Regular.woff") format("woff");
+  src: url("../fonts/ttf/IRANSans-Regular.ttf") format("truetype"),
+    url("../fonts/woff/IRANSans-Regular.woff") format("woff");
 }
 
 @font-face{
   font-family: "iranSans-Medium";
 
-  src: url("./fonts/ttf/IRANSans-Medium.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Medium.woff") format("woff");
+  src: url("../fonts/ttf/IRANSans-Medium.ttf") format("truetype"),
+    url("../fonts/woff/IRANSans-Medium.woff") format("woff");
 }
 
 @font-face{
   font-family: "iranSans-DemiBold";
 
-  src: url("./fonts/ttf/IRANSans-DemiBold.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-DemiBold.woff") format("woff");
+  src: url("../fonts/ttf/IRANSans-DemiBold.ttf") format("truetype"),
+    url("../fonts/woff/IRANSans-DemiBold.woff") format("woff");
 }
 
 @font-face{
   font-family: "iranSans-Bold";
 
-  src: url("./fonts/ttf/IRANSans-Bold.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Bold.woff") format("woff");
+  src: url("../fonts/ttf/IRANSans-Bold.ttf") format("truetype"),
+    url("../fonts/woff/IRANSans-Bold.woff") format("woff");
 }
 
 @font-face{
   font-family: "iranSans-Black";
 
-  src: url("./fonts/ttf/IRANSans-Black.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Black.woff") format("woff");
+  src: url("../fonts/ttf/IRANSans-Black.ttf") format("truetype"),
+    url("../fonts/woff/IRANSans-Black.woff") format("woff");
 }
 
 .swiper-pagination-bullet {
@@ -726,20 +726,12 @@ video {
   top: 0px;
 }
 
-.top-\[60\%\]{
-  top: 60%;
-}
-
-.left-\[\]{
-  left: ;
-}
-
-.top-\[35\%\]{
-  top: 35%;
-}
-
 .top-\[36\%\]{
   top: 36%;
+}
+
+.top-\[60\%\]{
+  top: 60%;
 }
 
 .z-40{
@@ -896,10 +888,6 @@ video {
   display: block;
 }
 
-.inline-block{
-  display: inline-block;
-}
-
 .flex{
   display: flex;
 }
@@ -1050,10 +1038,6 @@ video {
 
 .max-w-\[16rem\]{
   max-width: 16rem;
-}
-
-.max-w-\[1\]{
-  max-width: 1;
 }
 
 .max-w-\[9rem\]{
@@ -1567,10 +1551,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-\[\]{
-  color: ;
-}
-
 .shadow-\[0_-3px_6px_rgba\(0\2c 0\2c 0\2c 0\.1\)\]{
   --tw-shadow: 0 -3px 6px rgba(0,0,0,0.1);
   --tw-shadow-colored: 0 -3px 6px var(--tw-shadow-color);
@@ -1594,24 +1574,12 @@ video {
   transition-duration: 150ms;
 }
 
-.transition{
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .duration-150{
   transition-duration: 150ms;
 }
 
 .duration-200{
   transition-duration: 200ms;
-}
-
-.duration-500{
-  transition-duration: 500ms;
 }
 
 .placeholder\:text-sm::-webkit-input-placeholder{
@@ -1658,18 +1626,14 @@ video {
   border-style: none;
 }
 
-.focus\:bg-white:focus{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.focus\:bg-\[\]:focus{
-  background-color: ;
-}
-
 .focus\:bg-\[\#ddd\]:focus{
   --tw-bg-opacity: 1;
   background-color: rgb(221 221 221 / var(--tw-bg-opacity));
+}
+
+.focus\:bg-white:focus{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .focus\:shadow-\[0_2px_5px_rgba\(0\2c 0\2c 0\2c 0\.1\)\]:focus{
@@ -1858,14 +1822,6 @@ video {
 
   .lg\:block{
     display: block;
-  }
-
-  {
-    display: block;
-  }
-
-  .lg\:inline-block{
-    display: inline-block;
   }
 
   .lg\:flex{

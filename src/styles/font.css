@@ -1,25 +1,25 @@
 @font-face{
     font-family: "iranSans-Regular";
-    src: url("./fonts/ttf/IRANSans-Regular.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Regular.woff") format("woff");
+    src: url("../fonts/ttf/IRANSans-Regular.ttf") format("truetype"),
+    url("../fonts/woff/IRANSans-Regular.woff") format("woff");
 }
 @font-face{
     font-family: "iranSans-Medium";
-    src: url("./fonts/ttf/IRANSans-Medium.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Medium.woff") format("woff");
+    src: url("../fonts/ttf/IRANSans-Medium.ttf") format("truetype"),
+    url("../fonts/woff/IRANSans-Medium.woff") format("woff");
 }
 @font-face{
     font-family: "iranSans-DemiBold";
-    src: url("./fonts/ttf/IRANSans-DemiBold.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-DemiBold.woff") format("woff");
+    src: url("../fonts/ttf/IRANSans-DemiBold.ttf") format("truetype"),
+    url("../fonts/woff/IRANSans-DemiBold.woff") format("woff");
 }
 @font-face{
     font-family: "iranSans-Bold";
-    src: url("./fonts/ttf/IRANSans-Bold.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Bold.woff") format("woff");
+    src: url("../fonts/ttf/IRANSans-Bold.ttf") format("truetype"),
+    url("../fonts/woff/IRANSans-Bold.woff") format("woff");
 }
 @font-face{
     font-family: "iranSans-Black";
-    src: url("./fonts/ttf/IRANSans-Black.ttf") format("truetype"),
-    url("./fonts/woff/IRANSans-Black.woff") format("woff");
+    src: url("../fonts/ttf/IRANSans-Black.ttf") format("truetype"),
+    url("../fonts/woff/IRANSans-Black.woff") format("woff");
 }

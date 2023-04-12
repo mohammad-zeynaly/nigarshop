@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react"
 import ProductItem from "../../components/ProductItem/ProductItem";
 import { useParams } from "react-router";
-import useFetch from "../../Hooks/useFetch";
+import useFetch from "../../hooks/useFetch";
 
 
 function ProductCategory () {
@@ -50,7 +50,7 @@ function ProductCategory () {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 py-12">
                     {categoryProduct.map(product => (
-                        <ProductItem {...product}></ProductItem>
+                        <ProductItem key={product.id} {...product}></ProductItem>
                     ))}
                 </div>
             </div>

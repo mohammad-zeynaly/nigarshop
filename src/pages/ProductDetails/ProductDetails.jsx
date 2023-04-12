@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "../../Hooks/useFetch"
+import useFetch from "../../hooks/useFetch"
 import {FiArchive} from "react-icons/fi"
 import {FaRegChartBar} from "react-icons/fa"
 import {AiOutlinePlus,AiOutlineMinus} from "react-icons/ai"

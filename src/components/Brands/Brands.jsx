@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react"
-import useFetch from "../../Hooks/useFetch";
+import useFetch from "../../hooks/useFetch";
 
 import SwiperCore,{Autoplay} from "swiper";
 import {Swiper,SwiperSlide} from "swiper/react";

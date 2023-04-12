@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react"
 import { Link } from "react-router-dom";
 import {AiOutlineShoppingCart} from "react-icons/ai"
 import ShoppingCartItem from "./ShoppingCartItem"
-import useFetch from "../../Hooks/useFetch"
+import useFetch from "../../hooks/useFetch"
 
 
 function ShoppingCart () {

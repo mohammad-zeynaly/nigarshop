@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import routes from "./routes";
 import Footer from "./components/Footer/Footer";
 import BottomMenu from "./components/BottomMenu/BottomMenu";
-import "./app.css";
+import "./styles/app.css";
 
 
 function App(props) {

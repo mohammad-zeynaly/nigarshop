@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react"
-import useFetch from "../../Hooks/useFetch"
+import useFetch from "../../hooks/useFetch"
 import App from "../../App"
 import { Link,NavLink } from "react-router-dom"
 import {AiFillHeart,AiOutlineMenu,AiOutlineClose} from "react-icons/ai"

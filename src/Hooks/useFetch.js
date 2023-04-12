@@ -1,34 +1,31 @@
 import React,{useState,useEffect} from "react"
 
-    
-
-function useFetch (props) {
-
+function useFetch (url) {
     const [allProduct,setAllProduct] = useState([])
-
-    const fetchGetRequest= async () => {
-        
-        await fetch(props)
-        .then(response => response.json())
-        .then((data)  => {
-
-            let allProducts = Object.entries(data)
-        
-            setAllProduct(Object.entries(data)[0][1])
-        
-            console.log('Request Get ', allProducts)
-        })
-        .catch(error => {
-            console.warn("Failed In Request => ", error)
-        })
-    }
-
+    const [isPending,setIsPending] = useState(true)
+    const [error,setError] = useState(null)
+  
+  
     useEffect(() => {
-        fetchGetRequest()
+  
+       fetch(url)
+      .then(response => response.json())
+  
+      .then(data => {
+
+        setAllProduct(Object.entries(data)[0][1])
+        setIsPending(false)
+        setError(null) 
+        
+      })
+      .catch(err => setError(err))
+  
     },[])
 
-    return[allProduct]
+    return[allProduct,isPending,error];
 }
-    
 
 export default useFetch;
+
+
+
