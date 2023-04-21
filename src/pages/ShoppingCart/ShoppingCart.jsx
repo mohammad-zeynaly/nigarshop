@@ -1,12 +1,18 @@
-import React, { useState, useEffect, useContext, useCallback, useMemo } from "react";
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  useCallback,
+  useMemo,
+} from "react";
 import { shopContext } from "../../contexts/shopContext";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ShoppingCartItem from "./ShoppingCartItem";
 import ProductsData from "../../data/ProductData";
+import { toast } from "react-toastify";
 
 function ShoppingCart() {
-
   const [allProduct, setAllProduct] = useState(ProductsData);
   const persian = new Intl.NumberFormat("fa");
   const [cartItems, setCartItems] = useState([]);
@@ -24,16 +30,27 @@ function ShoppingCart() {
     setCartItems((prevItems) =>
       prevItems.filter((productItem) => productItem.id !== productId)
     );
+    toast.error("محصول از سبد خرید حذف شد", {
+      position: "top-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   }, []);
-
 
   // Calculate All Cart Product Price
   const totalCartPrice = useMemo(() => {
-    return userCart.reduce((total,productItem) => total + productItem.price * productItem.count,0)
-  },[userCart])
+    return userCart.reduce(
+      (total, productItem) => total + productItem.price * productItem.count,
+      0
+    );
+  }, [userCart]);
 
-
-  console.log(totalCartPrice)
+  console.log(totalCartPrice);
   return (
     <section className="cart my-16">
       <div className="container">
@@ -51,7 +68,7 @@ function ShoppingCart() {
                   </tr>
                 </thead>
                 <tbody>
-                    <ShoppingCartItem onRemove={removeProductInCart}/>
+                  <ShoppingCartItem onRemove={removeProductInCart} />
                 </tbody>
               </table>
 

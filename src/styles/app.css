@@ -52,6 +52,10 @@
   .swiper-pagination{
     display:none;
   }
+
+  .Toastify__toast-container{
+    width: 90%;
+  }
 }
 
 input::-webkit-outer-spin-button,
@@ -78,6 +82,23 @@ input[type=number] {
   background-color: #651FFF;
   padding: 0.4rem 0.8rem;
   border-radius: 10px;
+}
+
+.Toastify__toast-body{
+  justify-content: space-between;
+  flex: auto;
+}
+
+.Toastify__toast-body>div:last-child{
+  font-size: 16px;
+  font-family: "iranSans-Regular";
+  flex: none;
+}
+
+@media only screen and (max-width: 330px) {
+  .Toastify__toast-body>div:last-child{
+    font-size: 14px;
+  }
 }
 
 /*
@@ -734,6 +755,18 @@ video {
   top: 60%;
 }
 
+.top-\[-8px\]{
+  top: -8px;
+}
+
+.right-\[\]{
+  right: ;
+}
+
+.right-\[-12px\]{
+  right: -12px;
+}
+
 .z-40{
   z-index: 40;
 }
@@ -956,6 +989,34 @@ video {
   height: 100vh;
 }
 
+.h-5{
+  height: 1.25rem;
+}
+
+.h-\[2\.1rem\]{
+  height: 2.1rem;
+}
+
+.h-\[2rem\]{
+  height: 2rem;
+}
+
+.h-\[rem\]{
+  height: rem;
+}
+
+.h-\[1\.9rem\]{
+  height: 1.9rem;
+}
+
+.h-\[1\.8rem\]{
+  height: 1.8rem;
+}
+
+.h-\[1\.8re\]{
+  height: 1.8re;
+}
+
 .w-1\/2{
   width: 50%;
 }
@@ -1030,6 +1091,26 @@ video {
 
 .w-full{
   width: 100%;
+}
+
+.w-5{
+  width: 1.25rem;
+}
+
+.w-\[rem\]{
+  width: rem;
+}
+
+.w-\[2rem\]{
+  width: 2rem;
+}
+
+.w-\[1\.8rem\]{
+  width: 1.8rem;
+}
+
+.w-\[1\.7rem\]{
+  width: 1.7rem;
 }
 
 .max-w-\[10rem\]{
@@ -1255,6 +1336,24 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[\]{
+  background-color: ;
+}
+
+.bg-\[\#651FFF\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(101 31 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#\#f44336\]{
+  background-color: ##f44336;
+}
+
+.bg-\[\#f44336\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 67 54 / var(--tw-bg-opacity));
+}
+
 .fill-\[\#aaa\]{
   fill: #aaa;
 }
@@ -1457,8 +1556,20 @@ video {
   line-height: 1rem;
 }
 
+.text-\[13px\]{
+  font-size: 13px;
+}
+
+.text-\[12px\]{
+  font-size: 12px;
+}
+
 .leading-7{
   line-height: 1.75rem;
+}
+
+.leading-5{
+  line-height: 1.25rem;
 }
 
 .text-\[\#444\]{
@@ -1714,6 +1825,14 @@ video {
     height: 100%;
   }
 
+  .sm\:h-\[1\.5rem\]{
+    height: 1.5rem;
+  }
+
+  .sm\:h-\[1\.4rem\]{
+    height: 1.4rem;
+  }
+
   .sm\:w-1\/2{
     width: 50%;
   }
@@ -1736,6 +1855,14 @@ video {
 
   .sm\:w-auto{
     width: auto;
+  }
+
+  .sm\:w-\[1\.5rem\]{
+    width: 1.5rem;
+  }
+
+  .sm\:w-\[1\.4rem\]{
+    width: 1.4rem;
   }
 
   .sm\:grid-cols-2{

@@ -15,6 +15,9 @@
     .swiper-pagination{
         display:none;
     }
+    .Toastify__toast-container{
+        width: 90%;
+    }
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -37,4 +40,20 @@ input[type=number] {
     background-color: #651FFF;
     padding: 0.4rem 0.8rem;
     border-radius: 10px;
+}
+
+.Toastify__toast-body{
+    justify-content: space-between;
+    flex: auto;
+}
+.Toastify__toast-body>div:last-child{
+    font-size: 16px;
+    font-family: "iranSans-Regular";
+    flex: none;
+}
+
+@media only screen and (max-width: 330px) {
+    .Toastify__toast-body>div:last-child{
+        font-size: 14px;
+    }
 }

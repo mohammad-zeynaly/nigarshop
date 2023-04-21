@@ -4,14 +4,13 @@ import { AiOutlineClose, AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 function ShoppingCartItem(props) {
-  // let { id, img, name, price, count } = props;
   const { userCart, setUserCart } = useContext(shopContext);
   const persian = new Intl.NumberFormat("fa");
   const [counts, setCounts] = useState(1);
 
   const removeProductInCart = (productId) => {
     props.onRemove(productId);
-  };
+  };  
 
   useEffect(() => {
     console.log("Updated UserCart=> ", userCart);
@@ -48,7 +47,7 @@ function ShoppingCartItem(props) {
           <td className="sm:ml-5 sm:w-16 sm:h-14 w-8 h-8 bg-[#FFF7F7] rounded-[20px] cursor-pointer flex justify-center items-center">
             <AiOutlineClose
               onClick={() => removeProductInCart(cartProduct.id)}
-              className="stroke-[#ff0000] fill-[#ff0000] w-[1.1rem] h-[1rem] sm:w-[1.3rem] sm:h-[1.3rem]"
+              className="stroke-[#ff0000] fill-[#ff0000] w-[1.1rem] h-[1rem] sm:w-[1.4rem] sm:h-[1.4rem]"
             />
           </td>
           <td className="sm:ml-5 sm:pb-4 rounded-[10px] w-16">

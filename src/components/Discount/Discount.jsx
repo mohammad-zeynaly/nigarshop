@@ -31,7 +31,7 @@ function Discount ({addProductToCart}) {
             <div className="container">
                 <div className="py-3">
                     <h2 className="text-white text-center text-3xl my-5 font-iranSansBold"> زنگ تخفیفه! </h2>
-                        <Swiper spaceBetween={20} slidesPerView={1.2} loop={true}
+                        <Swiper spaceBetween={20} slidesPerView={1} loop={true}
                          grabCursor={true} autoplay={{delay:5000,disableOnInteraction:false}} 
                          breakpoints={{
                             1250:{
@@ -44,8 +44,8 @@ function Discount ({addProductToCart}) {
                             576:{
                                 slidesPerView: 2
                             },
-                            500:{
-                                slidesPerView: 1.6  
+                            350: {
+                                slidesPerView: 1.2
                             }
                          }}
                          >
