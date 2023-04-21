@@ -1,13 +1,12 @@
 import React,{useState,useEffect} from "react"
-import useFetch from "../../hooks/useFetch";
-
+import ProductsData from "../../data/ProductData";
 import AdsItem from "./AdsItem";
 
 
 function Ads () {
 
     const [adsItems,setAdsItems] = useState([])
-    const [allProduct] = useFetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
+    const [allProduct,setAllProduct] = useState(ProductsData)
 
     const filterAds = allProduct.filter(discount=> (
         discount.categories === "adsItems"

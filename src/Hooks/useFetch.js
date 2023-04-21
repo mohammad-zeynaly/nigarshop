@@ -3,7 +3,8 @@ import React,{useState,useEffect} from "react"
 function useFetch (url) {
     const [allProduct,setAllProduct] = useState([])
     const [isPending,setIsPending] = useState(true)
-    const [error,setError] = useState(null)
+    const [error, setError] = useState("");
+
   
   
     useEffect(() => {
@@ -18,8 +19,9 @@ function useFetch (url) {
         setError(null) 
         
       })
-      .catch(err => setError(err))
-  
+
+      .catch(err => setError(`Error fetching data: ${err.message}`));
+      
     },[])
 
     return[allProduct,isPending,error];

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react"
-import useFetch from "../../hooks/useFetch";
+import ProductsData from "../../data/ProductData";
 
 import SwiperCore,{Autoplay} from "swiper";
 import {Swiper,SwiperSlide} from "swiper/react";
@@ -9,7 +9,7 @@ SwiperCore.use([Autoplay])
 function Brands () {
 
     const [brands,setBrands] = useState([])
-    const [allProduct] = useFetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
+    const [allProduct,setAllProduct] = useState(ProductsData)
 
     const filterBrands = allProduct.filter(discount=> (
         discount.categories === "brands"

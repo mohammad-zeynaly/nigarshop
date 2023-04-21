@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
-import useFetch from "../../hooks/useFetch";
+import ProductsData from "../../data/ProductData";
 import DiscountItem from "./DiscountItem";
+import CardHoc from "./../HOC/CardHoc"
 
 import SwiperCore,{Autoplay} from "swiper";
 import {Swiper,SwiperSlide} from "swiper/react";
@@ -8,10 +9,10 @@ import "swiper/css"
 SwiperCore.use([Autoplay])
 
 
-function Discount () {
+function Discount ({addProductToCart}) {
 
     const [discountProduct,setDiscountProduct] = useState([])
-    const [allProduct] = useFetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
+    const [allProduct,setALlProduct] = useState(ProductsData)
 
 
     const filterDiscountProduct = allProduct.filter(discount=> (
@@ -51,7 +52,7 @@ function Discount () {
 
                             {discountProduct.map(product => (
                                 <SwiperSlide key={product.id} className="bg-white flex flex-col rounded-[20px] py-2 h-auto">
-                                    <DiscountItem  {...product} />
+                                    <DiscountItem onAddProduct={addProductToCart}  {...product} />
                                 </SwiperSlide>
                             ))}
 
@@ -63,4 +64,4 @@ function Discount () {
     )
 }
 
-export default Discount;
+export default CardHoc(Discount);

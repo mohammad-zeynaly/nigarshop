@@ -6,26 +6,24 @@ import NewProduct from "../../components/NewProduct/NewProduct"
 import Ads from "../../components/Ads/Ads";
 import CosmeticsProduct from "../../components/CosmeticsProduct/CosmeticsProduct";
 import ClothesProduct from "../../components/ClothesProduct/ClothesProduct";
-import Brands from "../../components/Brands/Brands"
+import Brands from "../../components/Brands/Brands";
 
 
-function Home () {
+function Home() {
 
-    
-    return(
-        <>
+    return (
         <main className="main">
-        <Slider/>
-        <Introduction/>
-        <Discount/>
-        <NewProduct/>
-        <Ads/>
-        <CosmeticsProduct/>
-        <ClothesProduct/>
-        <Brands></Brands>
+            <Slider />
+            <Introduction />
+            <Discount />
+            <NewProduct />
+            <Ads />
+            <CosmeticsProduct />
+            <ClothesProduct />
+            <Brands />
         </main>
-        </>
     )
+
 }
 
 export default Home;

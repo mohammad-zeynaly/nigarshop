@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from "react"
-import useFetch from "../../hooks/useFetch";
+import ProductsData from "../../data/ProductData";
 import Products from "../Products/Products";
 import ProductItem from "../ProductItem/ProductItem";
+import CardHoc from "./../HOC/CardHoc"
 
 
 import SwiperCore,{Autoplay} from "swiper";
@@ -10,14 +11,14 @@ import "swiper/css"
 SwiperCore.use([Autoplay])
 
 
-function ClothesProduct () {
+function ClothesProduct ({addProductToCart}) {
 
     const [productsTemplate,setProductsTemplate] = useState([
         {id:1,name:'مد و پوشاک روز',link:'/'}
     ])
 
     const [clothesProduct,setClothesProduct] = useState([])
-    const [allProduct] = useFetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
+    const [allProduct,setAllProduct] = useState(ProductsData)
 
 
     const filterClothesProduct = allProduct.filter(discount=> (
@@ -53,7 +54,7 @@ function ClothesProduct () {
 
                         {clothesProduct.map(product => (
                             <SwiperSlide key={product.id}>
-                                <ProductItem {...product}/>
+                                <ProductItem onAddProduct={addProductToCart} {...product}/>
                             </SwiperSlide>
                         ))}
                             
@@ -62,4 +63,4 @@ function ClothesProduct () {
     )
 }
 
-export default ClothesProduct;
+export default CardHoc(ClothesProduct);

@@ -1,23 +1,25 @@
 import React,{useState,useEffect} from "react"
-import useFetch from "../../hooks/useFetch";
+import ProductsData from "../../data/ProductData";
 import Products from "../Products/Products"
 import ProductItem from "../ProductItem/ProductItem";
 import SwiperCore,{Autoplay} from "swiper";
 import {Swiper,SwiperSlide} from "swiper/react";
+import CardHoc from "./../HOC/CardHoc"
 import "swiper/css"
 SwiperCore.use([Autoplay])
 
 
 
-function NewProduct () {
+function NewProduct ({addProductToCart}) {
 
     const [productsTemplate,setProductsTemplate] = useState([
         {id:1,name:'جدیدترین محصولات',link:'/'}
     ])
 
     const [newProducts,setNewProducts] = useState([])
-    const [allProduct] = useFetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
+    const [allProduct,setAllProduct] = useState(ProductsData)
     const [cartProduct,setCartProduct] = useState([])
+
 
 
     // Filtering Product
@@ -25,26 +27,12 @@ function NewProduct () {
         discount.categories === "discountProduct"
     ))
 
-
-    const addProductToCart = (productId) => {
-
-        const mainProduct = newProducts.find( product => (
-            product.id === productId
-        ))
-
-        setCartProduct(prev => {
-            return [...prev,mainProduct]
-        })
-        
-        //  برای این که هر محصول کلیک شد با context ذخیره شود بعد یاد گیری میااییم و هر محصول را بعد کلیک در کانتکست ذخریه میکنیم
-    }
-    
-
     useEffect(() => {
 
         setNewProducts(filterNewProduct)
 
     },[allProduct,cartProduct])
+
 
 
 
@@ -71,7 +59,7 @@ function NewProduct () {
 
                         {newProducts.map(product => (
                             <SwiperSlide key={product.id}>
-                                <ProductItem onAddProduct={addProductToCart} {...product}/>
+                                <ProductItem onAddProduct={addProductToCart}  {...product}/>{/*onAddProduct={addProductToCart}*/}
                             </SwiperSlide>
                         ))}
                             
@@ -81,4 +69,4 @@ function NewProduct () {
 }
 
 
-export default NewProduct;
+export default CardHoc(NewProduct);

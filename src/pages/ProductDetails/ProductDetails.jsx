@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch"
+import ProductsData from "../../data/ProductData";
 import {FiArchive} from "react-icons/fi"
 import {FaRegChartBar} from "react-icons/fa"
 import {AiOutlinePlus,AiOutlineMinus} from "react-icons/ai"
@@ -10,7 +10,7 @@ function ProductDetails () {
 
     const persian = new Intl.NumberFormat('fa')
     const params = useParams()
-    const [allProducts] = useFetch("https://nigarshop-46e01-default-rtdb.firebaseio.com/allProduct.json")
+    const [allProducts,setAllProduct] = useState(ProductsData)
 
     const [productDetail ,setProductDetail] = useState([])
     const[count,setCount] = useState(1)
