@@ -9,7 +9,7 @@ function CardHoc(OriginalComponent) {
 
     const [allProduct, setAllProduct] = useState(ProductData);
 
-    const { userCart, setUserCart, setToastStatus } = useContext(shopContext);
+    const { userCart, setUserCart } = useContext(shopContext);
 
     // Add Product To User Cart
     const addProductToCart = (productId) => {
@@ -51,7 +51,6 @@ function CardHoc(OriginalComponent) {
         theme: "light",
         
       });
-
     };
 
     return <OriginalComponent addProductToCart={addProductToCart} />;

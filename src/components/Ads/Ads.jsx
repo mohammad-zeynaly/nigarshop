@@ -1,32 +1,32 @@
-import React,{useState,useEffect} from "react"
+import React, { useState, useEffect } from "react";
 import ProductsData from "../../data/ProductData";
 import AdsItem from "./AdsItem";
 
+function Ads() {
 
-function Ads () {
+  const [adsItems, setAdsItems] = useState([]);
+  const [allProduct, setAllProduct] = useState(ProductsData);
 
-    const [adsItems,setAdsItems] = useState([])
-    const [allProduct,setAllProduct] = useState(ProductsData)
+  const filterAds = allProduct.filter(
+    (discount) => discount.categories === "adsItems"
+  );
 
-    const filterAds = allProduct.filter(discount=> (
-        discount.categories === "adsItems"
-    ))
+  useEffect(() => {
+    setAdsItems(filterAds);
+  }, [allProduct]);
 
-    useEffect( () => {
-        setAdsItems(filterAds)
-    },[allProduct])
-
-    return( 
-        <section className="ads mt-10">
-            <div className="container">
-                <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                    {adsItems.map(item => (
-                        <AdsItem key={item.id} {...item}/>
-                    ))}
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section className="ads mt-10">
+      <div className="container">
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          {adsItems.map((item) => (
+            <AdsItem key={item.id} {...item} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+  
 }
 
 export default Ads;

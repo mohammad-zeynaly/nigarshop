@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react";
-import ProductItem from "../../components/ProductItem/ProductItem";
 import { useParams } from "react-router";
 import CardHoc from "../../components/HOC/CardHoc";
 import ProductsData from "../../data/ProductData";
+import ProductCategoryMenu from "./ProductCategoryMenu";
+import ProductCategoryItem from "./ProductCategoryItem";
 
 function ProductCategory({ addProductToCart }) {
+
   const params = useParams();
   const [allProducts, setAllProduct] = useState(ProductsData);
   const [activeMenuItem, setActiveMenuItem] = useState(0);
 
-  const [menus, setMenus] = useState([
-    { id: 1, name: "جدیدترین", type: "item1" },
-    { id: 2, name: "محبوب‌ترین", type: "item2" },
-    { id: 3, name: "رتبه بندی", type: "item3" },
-    { id: 4, name: "ارزان‌ترین", type: "item4" },
-    { id: 5, name: "گران‌ترین", type: "item5" },
-  ]);
   const [categoryProduct, setCategoryProduct] = useState([]);
 
   // Filtering Products
@@ -43,29 +38,19 @@ function ProductCategory({ addProductToCart }) {
             <h5 className="text-[15px] text-[#999] hidden sm:block">
               مرتب سازی بر اساس :
             </h5>
-            <div className="mt-5 md:mr-12 md:mt-0 flex items-center text-[#777] product-category">
-              {menus.map((item, index) => (
-                <li
-                  onClick={() => menuIemHandler(item.type)}
-                  className={`ml-5 sm:ml-6 ${
-                    activeMenuItem === item.type ? "active" : ""
-                  }${activeMenuItem === index ? "active" : ""}`}
-                >
-                  <button>{item.name}</button>
-                </li>
-              ))}
-            </div>
+
+            <ProductCategoryMenu
+              menuIemHandler={menuIemHandler}
+              activeMenuItem={activeMenuItem}
+            />
           </ul>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 py-12">
-          {categoryProduct.map((product) => (
-            <ProductItem
-              onAddProduct={addProductToCart}
-              key={product.id}
-              {...product}
-            ></ProductItem>
-          ))}
-        </div>
+        
+        <ProductCategoryItem
+          categoryProduct={categoryProduct}
+          addProductToCart={addProductToCart}
+        />
+
       </div>
     </section>
   );

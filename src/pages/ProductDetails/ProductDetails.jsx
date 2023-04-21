@@ -1,19 +1,15 @@
 import React,{useState,useEffect} from "react";
 import { useParams } from "react-router-dom";
 import ProductsData from "../../data/ProductData";
-import {FiArchive} from "react-icons/fi"
-import {FaRegChartBar} from "react-icons/fa"
-import {AiOutlinePlus,AiOutlineMinus} from "react-icons/ai"
+import ProductDetailsItem from "./ProductDetailsItem"
 
 
 function ProductDetails () {
 
-    const persian = new Intl.NumberFormat('fa')
     const params = useParams()
     const [allProducts,setAllProduct] = useState(ProductsData)
 
     const [productDetail ,setProductDetail] = useState([])
-    const[count,setCount] = useState(1)
 
     const mainProduct = allProducts.find(product => (
         product.id === +params.productId
@@ -29,55 +25,8 @@ function ProductDetails () {
         {productDetail && 
         <section className="product-details">
             <div className="container">
-              
-                <div className="bg-white flex items-center my-8 rounded-[20px] overflow-hidden p-4">
-                    <div className="w-1/4">
-                        <img className="object-cover w-full" src={productDetail.img} alt="product image" />
-                    </div>
-                    <div className="text-sm w-1/2">
-                        <h3 className="text-lg">{productDetail.name}</h3>
-                        <div className="flex items-center mt-3">
-                            
-                        <span className="flex items-center">
-                        <FiArchive className="ml-2"/>
-                        دسته : {productDetail.categoriesPersian}
-                        </span>
 
-                        <span className="flex items-center pr-8">
-                        <FaRegChartBar className="ml-2"/>
-                        24 فروش موفق
-                        </span>
-
-                        </div>
-                        <h4 className="mt-8 text-base border-b border-[#eee] pb-4 text-[#555] font-iranSansBold">آماده ارسال</h4>
-                        <div className="text-[#757575]">
-                            <h4 className="text-base mt-5 text-[#777] font-iranSansBold">ویژگی های محصول</h4>
-                            <ul className="flex flex-col mt-2">
-                                <li className="mb-2 text-[#464646]">ویژگی اول : لورم ایپسوم</li>
-                                <li className="mb-2 text-[#464646]">ویژگی دوم : لورم ایپسوم</li>
-                                <li className="mb-2 text-[#464646]">ویژگی سوم : لورم ایپسوم</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="basket" className="w-1/4 bg-[#EEEEEE] px-4 py-6 rounded-[20px] text-[#888]">
-                        <div className="flex justify-between items-center">
-                            <span>فروشنده:</span>
-                            <span>سام تل</span>
-                        </div>
-                        <div className="flex justify-between items-center mt-4">
-                            <span>قیمت:</span>
-                            <span className="text-primary font-iranSansBold"> {persian.format(productDetail.price)} تومان </span>
-                        </div>
-                        <div className="flex justify-between items-center mt-6">
-                            <div className="flex items-center relative">
-                                <button onClick={() => count < 10 && setCount(current => current+1)} className="flex justify-center items-center bg-[#eee] absolute right-[2px] h-8 w-6 rounded-[20px]"><AiOutlinePlus className="text-[#666]"/></button>
-                                <input type="number" className="rounded-[10px] text-center w-20 h-10 bg-[#f5f5f5] focus:outline-none" min="1" max="10" value={count}/>
-                                <button onClick={() => count > 0 && setCount(current => current-1)} className="flex justify-center items-center bg-[#eee] absolute left-[2px] h-8 w-6 rounded-[20px]"><AiOutlineMinus className="text-[#666]"/></button>
-                            </div>
-                            <button className="bg-primary text-white rounded-[20px] py-2 px-4"> افزودن به سبد خرید</button>
-                        </div>
-                    </div>
-                </div>
+                <ProductDetailsItem productDetail={productDetail}/>
 
                 <div className="bg-white p-4 my-8 rounded-[20px] text-[#666]">
                     <h3 className="text-lg">توضیحات محصول</h3>

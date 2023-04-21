@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 function ShoppingCartItem(props) {
   const { userCart, setUserCart } = useContext(shopContext);
   const persian = new Intl.NumberFormat("fa");
-  const [counts, setCounts] = useState(1);
 
   const removeProductInCart = (productId) => {
     props.onRemove(productId);
