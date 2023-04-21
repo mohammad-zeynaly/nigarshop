@@ -13,7 +13,7 @@ function Navbar () {
 
     const [menuItems,setMenuItems] = useState([
         {id:1, title:'صفحه اصلی', href:'/'},
-        {id:2, title:'کالای دیجیتال', href:'productCategory/discountProduct'},
+        {id:2, title:'کالای دیجیتال', href:'/productCategory/discountProduct'},
         {id:3, title:' کودک و نوزاد', href:'productCategory/toyProduct'},
         {id:4, title:'مد و پوشاک', href:'productCategory/clothesProduct'},
         {id:5, title:'لوازم ورزشی', href:'productCategory/sportProduct'},
