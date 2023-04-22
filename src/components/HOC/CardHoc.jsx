@@ -1,18 +1,17 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { shopContext } from "../../contexts/shopContext";
 import ProductData from "../../data/ProductData";
 import { toast } from "react-toastify";
 
 function CardHoc(OriginalComponent) {
   function NewComponent() {
-    const [cartProduct, setCartProduct] = useState([]);
-
     const [allProduct, setAllProduct] = useState(ProductData);
 
     const { userCart, setUserCart } = useContext(shopContext);
 
     // Add Product To User Cart
     const addProductToCart = (productId) => {
+      
       const mainProduct = allProduct.find(
         (product) => product.id === productId
       );
@@ -22,10 +21,13 @@ function CardHoc(OriginalComponent) {
       );
 
       if (!shoppingCartProduct) {
+
         setUserCart((prevProduct) => {
           return [...prevProduct, mainProduct];
         });
+
       } else {
+
         let shoppingCartProduct = [...userCart];
 
         shoppingCartProduct.some((product) => {
@@ -38,18 +40,16 @@ function CardHoc(OriginalComponent) {
         setUserCart(shoppingCartProduct);
       }
 
-
       // create toastBox success addToCart
       toast.success("محصول به سبد خرید اضافه شد", {
         position: "top-right",
-        autoClose:  4000,
+        autoClose: 4000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
         theme: "light",
-        
       });
     };
 

@@ -5,6 +5,7 @@ import MyAccount from "./pages/MyAccount/MyAccount";
 import ShoppingCart from "./pages/ShoppingCart/ShoppingCart";
 import Search from "./pages/Search/Search"
 import NotFound from "./pages/NotFound/NotFound";
+import AllProducts from "./pages/AllProducts/AllProducts";
 
 
 let routes = [
@@ -15,6 +16,7 @@ let routes = [
     {path:'/myAccount',element: <MyAccount/>},
     {path:'/shoppingCart',element:<ShoppingCart/>},
     {path:"/search",element:<Search/>},
+    {path:"/allProduct" , element: <AllProducts />},
     {path:'*',element:<NotFound/>},
 
 ]

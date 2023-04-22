@@ -8,7 +8,7 @@ import SwiperTemplate from "../SwiperTemplate/SwiperTemplate";
 function CosmeticsProduct({ addProductToCart }) {
 
   const [productsTemplate, setProductsTemplate] = useState([
-    { id: 1, name: "لوازم آرایشی و بهداشتی ", link: "/" },
+    { id: 1, name: "لوازم آرایشی و بهداشتی ", link: "/allProduct" },
   ]);
 
   const [cosmeticsProduct, setCosmeticsProduct] = useState([]);

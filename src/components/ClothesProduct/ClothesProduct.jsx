@@ -7,7 +7,7 @@ import SwiperTemplate from "../SwiperTemplate/SwiperTemplate";
 
 function ClothesProduct({ addProductToCart }) {
   const [productsTemplate, setProductsTemplate] = useState([
-    { id: 1, name: "مد و پوشاک روز", link: "/" },
+    { id: 1, name: "مد و پوشاک روز", link: "/allProduct" },
   ]);
 
   const [clothesProduct, setClothesProduct] = useState([]);
