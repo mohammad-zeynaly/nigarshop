@@ -24,13 +24,14 @@
 
 ## pages
 * page Home
-* page login and register user
-* page shoppingCart
+* page login and register 
+* page cart
 * page searchBar
 * page notFound (404page)
 * page productCategory
 * page productDetail
 * page allProduct
+
 --
 ## contact me
 * *[email](mailto:051.mhmdzynaly977@gmail.com)*
