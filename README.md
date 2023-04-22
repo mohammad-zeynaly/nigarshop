@@ -2,13 +2,12 @@
 ---
 
 # nigarshop.com/fa page front-end
-## [review online](https://arvancloud.netlify.app/)
+## [review online]()
 
 ---
 ## tips
 
 * fully responsive for mobile, tablet, laptop and desktop
-* In this project, the functional component is fully used
 * In this project, the functional component is fully used
 
 
