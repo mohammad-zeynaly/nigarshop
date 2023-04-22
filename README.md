@@ -10,8 +10,8 @@
 * fully responsive for mobile, tablet, laptop and desktop
 * In this project, the functional component is fully used
 
-
 ---
+
 ## web development technologies
 * tailwindcss  
 * reactjs
@@ -19,7 +19,19 @@
 * react-toastify
 * react-icons
 * swiper
+
 ---
+
+## pages
+* page Home
+* page login and register user
+* page shoppingCart
+* page searchBar
+* page notFound (404page)
+* page productCategory
+* page productDetail
+* page allProduct
+--
 ## contact me
 * *[email](mailto:051.mhmdzynaly977@gmail.com)*
 * *[telegram](https://t.me/zeynali2003/)*
