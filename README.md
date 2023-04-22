@@ -30,9 +30,10 @@
 * page notFound (404page)
 * page productCategory
 * page productDetail
-* page allProduct
+* page allProducts
 
---
+---
+
 ## contact me
 * *[email](mailto:051.mhmdzynaly977@gmail.com)*
 * *[telegram](https://t.me/zeynali2003/)*
