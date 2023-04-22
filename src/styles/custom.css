@@ -1,59 +1,71 @@
 .swiper-pagination-bullet {
-    background: #fff;
-    width: 10px;
-    height: 10px;
-    opacity: 0.5;
-    border-radius: 10px;
-    margin: 3px;
-    transition: 0.2s;
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+  border-radius: 10px;
+  margin: 3px;
+  transition: 0.2s;
 }
-.swiper-pagination-bullet-active{
-    opacity: 1;
-    width: 20px;
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 20px;
 }
-@media screen and (max-width:576px) {
-    .swiper-pagination{
-        display:none;
-    }
-    .Toastify__toast-container{
-        width: 90%;
-    }
+@media screen and (max-width: 576px) {
+  .swiper-pagination {
+    display: none;
+  }
+  .Toastify__toast-container {
+    width: 90%;
+  }
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0; 
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type=number] {
-    -moz-appearance:textfield;
+input[type="number"] {
+  -moz-appearance: textfield;
 }
-.menu__item .active{
-    color: #651FFF;
+.menu__item .active {
+  color: #651fff;
 }
-.active svg{
-    fill: #651FFF;
-    stroke: #651FFF;
+.active svg {
+  fill: #651fff;
+  stroke: #651fff;
 }
-.product-category .active{
-    color: #fff;
-    background-color: #651FFF;
-    padding: 0.4rem 0.8rem;
-    border-radius: 10px;
+.product-category .active {
+  color: #fff;
+  background-color: #651fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
 }
 
-.Toastify__toast-body{
-    justify-content: space-between;
-    flex: auto;
+.Toastify__toast-body {
+  justify-content: space-between;
+  flex: auto;
 }
-.Toastify__toast-body>div:last-child{
-    font-size: 16px;
-    font-family: "iranSans-Regular";
-    flex: none;
+.Toastify__toast-body > div:last-child {
+  font-size: 16px;
+  font-family: "iranSans-Regular";
+  flex: none;
 }
 
 @media only screen and (max-width: 330px) {
-    .Toastify__toast-body>div:last-child{
-        font-size: 14px;
-    }
+  .Toastify__toast-body > div:last-child {
+    font-size: 14px;
+  }
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateZ(0);
+  z-index: 45;
 }

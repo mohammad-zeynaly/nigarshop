@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{ useState, useRef , useEffect } from "react";
 import {useRoutes,useLocation} from "react-router-dom";
 import Header from "./components/Header/Header";
 import routes from "./routes";
@@ -14,17 +14,26 @@ function App(props) {
   const location = useLocation()
 
   const [userCart,setUserCart] = useState([])
-  const [toastStatus,setToastStatus] = useState(false)
+  const [statusMenu,setStatusMenu] = useState(false) 
+  const overlayRef = useRef()
+  
+  
+  useEffect(() => {
+    overlayRef.current.addEventListener("click", () => {
+      setStatusMenu(false)
+    })
+  },[overlayRef])
+
   return (
     <shopContext.Provider value={{
       userCart,
       setUserCart,
-      toastStatus,
-      setToastStatus,
+      statusMenu,
+      setStatusMenu,
     }}>
 
-    <div className={`font-iranSansMedium ${location.pathname === "/search" ? "bg-white" : "bg-[#EEEEEE]"} overflow-x-hidden `}>
-
+    <div className={`font-iranSansMedium ${location.pathname === "/search" ? "bg-white" : "bg-[#EEEEEE]"} overflow-x-hidden`}>
+      <div ref={overlayRef} className={statusMenu ? "overlay" : ""}></div>
     {location.pathname === "/myAccount" || location.pathname === "/search" ? "" : <Header/>}
     {routers}
    
