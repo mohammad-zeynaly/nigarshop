@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import { useState } from "react";
 import FromItem from "./FormItem"
 import { Link } from "react-router-dom";
 import { FiUserPlus,FiLogIn } from "react-icons/fi"

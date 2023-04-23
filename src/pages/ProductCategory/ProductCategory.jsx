@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import CardHoc from "../../components/HOC/CardHoc";
 import { shopContext } from "../../contexts/shopContext";

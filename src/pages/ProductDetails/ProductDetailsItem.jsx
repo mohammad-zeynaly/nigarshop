@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FaRegChartBar } from "react-icons/fa";
 import { FiArchive } from "react-icons/fi";

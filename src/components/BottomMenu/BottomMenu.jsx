@@ -1,4 +1,4 @@
-import React,{ useContext } from "react";
+import { useContext } from "react";
 import { AiOutlineHome,AiOutlineSearch,AiOutlineUser,AiOutlineShoppingCart } from "react-icons/ai";
 import { NavLink } from "react-router-dom"
 import { shopContext } from "../../contexts/shopContext"

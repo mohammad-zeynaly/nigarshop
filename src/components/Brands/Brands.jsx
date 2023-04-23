@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useContext } from "react";
+import { useState, useEffect,useContext } from "react";
 import { shopContext } from "../../contexts/shopContext";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
