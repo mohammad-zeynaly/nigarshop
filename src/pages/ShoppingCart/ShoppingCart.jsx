@@ -9,19 +9,17 @@ import { shopContext } from "../../contexts/shopContext";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ShoppingCartItem from "./ShoppingCartItem";
-import ProductsData from "../../data/ProductData";
 import { toast } from "react-toastify";
 
 function ShoppingCart() {
-  const [allProduct, setAllProduct] = useState(ProductsData);
   const persian = new Intl.NumberFormat("fa");
   const [cartItems, setCartItems] = useState([]);
 
-  const { userCart, setUserCart } = useContext(shopContext);
+  const { productData,userCart, setUserCart } = useContext(shopContext);
 
   useEffect(() => {
     setCartItems(userCart);
-  }, [allProduct]);
+  }, [productData]);
 
   useEffect(() => setUserCart(cartItems), [cartItems]);
 

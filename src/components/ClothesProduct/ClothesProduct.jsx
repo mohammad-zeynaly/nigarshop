@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import ProductsData from "../../data/ProductData";
+import React, { useState, useEffect, useContext } from "react";
+import { shopContext } from "../../contexts/shopContext";
 import Products from "../Products/Products";
 import ProductItem from "../ProductItem/ProductItem";
 import CardHoc from "./../HOC/CardHoc";
@@ -10,30 +10,27 @@ function ClothesProduct({ addProductToCart }) {
     { id: 1, name: "مد و پوشاک روز", link: "/allProduct" },
   ]);
 
+  const { productData } = useContext(shopContext);
   const [clothesProduct, setClothesProduct] = useState([]);
-  const [allProduct, setAllProduct] = useState(ProductsData);
-
-  const filterClothesProduct = allProduct.filter(
-    (discount) => discount.categories === "clothesProduct"
-  );
 
   useEffect(() => {
-    setClothesProduct(filterClothesProduct);
-  }, [allProduct]);
+    if (productData) {
+      const filterClothesProduct = productData.filter(
+        (discount) => discount.categories === "clothesProduct"
+      );
+      setClothesProduct(filterClothesProduct);
+    }
+  }, [productData]);
 
-  
   return (
     <Products {...productsTemplate[0]}>
-
       <SwiperTemplate
         products={clothesProduct}
         ProductItem={ProductItem}
         onAddProduct={addProductToCart}
       />
-
     </Products>
   );
-
 }
 
 export default CardHoc(ClothesProduct);

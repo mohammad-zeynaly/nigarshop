@@ -1,24 +1,26 @@
-import React, { useState, useEffect } from "react";
-
-import ProductData from "../../data/ProductData";
+import React, { useState, useEffect, useContext } from "react";
+import { shopContext } from "../../contexts/shopContext";
 import CardHoc from "../../components/HOC/CardHoc";
 import ProductItem from "../../components/ProductItem/ProductItem";
 import { Link } from "react-router-dom";
 
 function AllProducts({ addProductToCart }) {
-    
-  const filteredAllProduct = ProductData.filter(
-    (product) => product.type === "product"
-  );
-
-  const [productsArray, setProdcutArray] = useState(filteredAllProduct);
+  
+  const { productData } = useContext(shopContext);
+  const [productsArray, setProdcutArray] = useState();
   const [currenPage, setCurrenPage] = useState(1);
   const [paginatedProduct, setPaginatedProduct] = useState([]);
   let pageSize = 12;
 
   useEffect(() => {
-    shownPaginatedProduct(productsArray);
-  }, [productsArray, currenPage]);
+    if (productData) {
+      const filteredAllProduct = productData.filter(
+        (product) => product.type === "product"
+      );
+      setProdcutArray(filteredAllProduct);
+      shownPaginatedProduct(filteredAllProduct);
+    }
+  }, [productData, currenPage]);
 
   const shownPaginatedProduct = (productsArray) => {
     let endProductIndex = currenPage * pageSize;
@@ -30,10 +32,12 @@ function AllProducts({ addProductToCart }) {
 
     setPaginatedProduct(allShownProducts);
   };
-
-  const pageNumbers = Array.from(
-    Array(Math.ceil(productsArray.length / pageSize)).keys()
-  );
+let pageNumbers;
+  if(productsArray){
+     pageNumbers = Array.from(
+      Array(Math.ceil(productsArray.length / pageSize)).keys()
+    );
+  }
 
   const changePaginatedProduct = (newPageNumber) => {
     setCurrenPage(newPageNumber);
@@ -53,10 +57,14 @@ function AllProducts({ addProductToCart }) {
           ))}
         </div>
         <div className="flex justify-center items-center my-12">
-          {pageNumbers.map((paginated) => (
+          {pageNumbers && pageNumbers.map((paginated) => (
             <Link
               key={paginated + 1}
-              className={`${paginated + 1 === currenPage ? "bg-primary text-white" : "bg-white"} py-2 px-4 rounded-[10px] ml-4 `}
+              className={`${
+                paginated + 1 === currenPage
+                  ? "bg-primary text-white"
+                  : "bg-white"
+              } py-2 px-4 rounded-[10px] ml-4 `}
               onClick={() => changePaginatedProduct(paginated + 1)}
             >
               {paginated + 1}

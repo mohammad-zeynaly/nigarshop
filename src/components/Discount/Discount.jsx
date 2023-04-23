@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
-import ProductsData from "../../data/ProductData";
+import React, { useState, useEffect, useContext } from "react";
+import { shopContext } from "../../contexts/shopContext";
 import DiscountItem from "./DiscountItem";
 import CardHoc from "./../HOC/CardHoc";
 import SwiperTemplate from "../SwiperTemplate/SwiperTemplate";
 
 function Discount({ addProductToCart }) {
-
+  const { productData } = useContext(shopContext);
   const [discountProduct, setDiscountProduct] = useState([]);
-  const [allProduct, setALlProduct] = useState(ProductsData);
-
-  const filterDiscountProduct = allProduct.filter(
-    (discount) => discount.categories === "discountProduct"
-  );
 
   useEffect(() => {
-    setDiscountProduct(filterDiscountProduct);
-  }, [allProduct]);
+    if (productData) {
+      const filterDiscountProduct = productData.filter(
+        (discount) => discount.categories === "discountProduct"
+      );
+      setDiscountProduct(filterDiscountProduct);
+    }
+  }, [productData]);
 
   return (
     <>
@@ -33,13 +33,11 @@ function Discount({ addProductToCart }) {
               onAddProduct={addProductToCart}
               swiperClass={"bg-white flex flex-col rounded-[20px] py-2 h-auto"}
             />
-
           </div>
         </div>
       </section>
     </>
   );
-  
 }
 
 export default CardHoc(Discount);

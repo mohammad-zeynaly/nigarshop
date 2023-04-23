@@ -4,17 +4,15 @@ import { FaRegChartBar } from "react-icons/fa";
 import { FiArchive } from "react-icons/fi";
 import { toast } from "react-toastify";
 import { shopContext } from "../../contexts/shopContext";
-import productData from "../../data/ProductData";
 
 const ProductDetailsItem = ({ productDetail }) => {
   const persian = new Intl.NumberFormat("fa");
   const [count, setCount] = useState(1);
-  const [allProduct, setAllProduct] = useState(productData);
-  const { userCart, setUserCart } = useContext(shopContext);
+  const { productData,userCart, setUserCart } = useContext(shopContext);
 
   // Add Product To cart
   const addProductToUserCart = (productId) => {
-    const mainProduct = allProduct.find((product) => product.id === productId);
+    const mainProduct = productData.find((product) => product.id === productId);
 
     const shoppingCartProduct = userCart.some(
       (cartProduct) => cartProduct.name === mainProduct.name

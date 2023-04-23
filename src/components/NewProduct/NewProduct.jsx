@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import ProductsData from "../../data/ProductData";
+import React, { useState, useEffect, useContext } from "react";
+import { shopContext } from "../../contexts/shopContext";
 import Products from "../Products/Products";
 import ProductItem from "../ProductItem/ProductItem";
 import CardHoc from "./../HOC/CardHoc";
@@ -10,17 +10,18 @@ function NewProduct({ addProductToCart }) {
     { id: 1, name: "جدیدترین محصولات", link: "/allProduct" },
   ]);
 
+  const { productData } = useContext(shopContext);
   const [newProducts, setNewProducts] = useState([]);
-  const [allProduct, setAllProduct] = useState(ProductsData);
-
-  // Filtering Product
-  const filterNewProduct = allProduct.filter(
-    (discount) => discount.categories === "discountProduct"
-  );
+  const [allProduct, setAllProduct] = useState([]);
 
   useEffect(() => {
-    setNewProducts(filterNewProduct);
-  }, [allProduct]);
+    if (productData) {
+      const filterNewProduct = productData.filter(
+        (discount) => discount.categories === "discountProduct"
+      );
+      setNewProducts(filterNewProduct);
+    }
+  }, [productData]);
 
   return (
     <Products {...productsTemplate[0]}>

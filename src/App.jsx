@@ -1,47 +1,76 @@
-import React,{ useState, useRef , useEffect } from "react";
-import {useRoutes,useLocation} from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { useRoutes, useLocation } from "react-router-dom";
+import supabase from "./config/supabaseClient";
 import Header from "./components/Header/Header";
 import routes from "./routes";
 import Footer from "./components/Footer/Footer";
 import BottomMenu from "./components/BottomMenu/BottomMenu";
-import { shopContext } from"./contexts/shopContext"
-import ToastBox from "./components/Toast/Toast"
+import { shopContext } from "./contexts/shopContext";
+import ToastBox from "./components/Toast/Toast";
 import "./styles/app.css";
 
-function App(props) {
+function App() {
+  const routers = useRoutes(routes);
+  const location = useLocation();
 
-  const routers = useRoutes(routes)
-  const location = useLocation()
+  const [userCart, setUserCart] = useState([]);
+  const [statusMenu, setStatusMenu] = useState(false);
+  const overlayRef = useRef();
+  const [productData, setProductData] = useState();
 
-  const [userCart,setUserCart] = useState([])
-  const [statusMenu,setStatusMenu] = useState(false) 
-  const overlayRef = useRef()
-  
-  
   useEffect(() => {
     overlayRef.current.addEventListener("click", () => {
-      setStatusMenu(false)
-    })
-  },[overlayRef])
+      setStatusMenu(false);
+    });
+  }, [overlayRef]);
+
+  useEffect(() => {
+    fetchGetRequest()
+  }, []);
+
+  const fetchGetRequest = async () => {
+    const { data, error } = await supabase.from("products").select();
+    if (data) {
+      console.log("datas", data);
+      setProductData(data);
+    } else {
+      console.log("error => ", error);
+    }
+  };
 
   return (
-    <shopContext.Provider value={{
-      userCart,
-      setUserCart,
-      statusMenu,
-      setStatusMenu,
-    }}>
+    <shopContext.Provider
+      value={{
+        productData,
+        userCart,
+        setUserCart,
+        statusMenu,
+        setStatusMenu,
+      }}
+    >
+      <div
+        className={`font-iranSansMedium ${
+          location.pathname === "/search" ? "bg-white" : "bg-[#EEEEEE]"
+        } overflow-x-hidden`}
+      >
+        <div ref={overlayRef} className={statusMenu ? "overlay" : ""}></div>
+        {location.pathname === "/myAccount" ||
+        location.pathname === "/search" ? (
+          ""
+        ) : (
+          <Header />
+        )}
+        {routers}
 
-    <div className={`font-iranSansMedium ${location.pathname === "/search" ? "bg-white" : "bg-[#EEEEEE]"} overflow-x-hidden`}>
-      <div ref={overlayRef} className={statusMenu ? "overlay" : ""}></div>
-    {location.pathname === "/myAccount" || location.pathname === "/search" ? "" : <Header/>}
-    {routers}
-   
-    {location.pathname === "/myAccount" || location.pathname === "/search" ? "" : <Footer/>}
-    <BottomMenu/>
-    
-    </div>
-    <ToastBox />
+        {location.pathname === "/myAccount" ||
+        location.pathname === "/search" ? (
+          ""
+        ) : (
+          <Footer />
+        )}
+        <BottomMenu />
+      </div>
+      <ToastBox />
     </shopContext.Provider>
   );
 }

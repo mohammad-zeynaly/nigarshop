@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from "react";
-import ProductsData from "../../data/ProductData";
+import React, { useState, useEffect,useContext } from "react";
+import {shopContext} from "../../contexts/shopContext";
 import AdsItem from "./AdsItem";
 
 function Ads() {
 
+  const { productData }= useContext(shopContext)
   const [adsItems, setAdsItems] = useState([]);
-  const [allProduct, setAllProduct] = useState(ProductsData);
 
-  const filterAds = allProduct.filter(
-    (discount) => discount.categories === "adsItems"
-  );
+ 
 
   useEffect(() => {
-    setAdsItems(filterAds);
-  }, [allProduct]);
+    if(productData){
+      const filterAds = productData.filter(
+        (discount) => discount.categories === "adsItems"
+      );
+      setAdsItems(filterAds);
+    }
+  }, [productData]);
 
   return (
     <section className="ads mt-10">

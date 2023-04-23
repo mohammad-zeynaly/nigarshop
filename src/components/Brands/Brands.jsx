@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import ProductsData from "../../data/ProductData";
+import React, { useState, useEffect,useContext } from "react";
+import { shopContext } from "../../contexts/shopContext";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,16 +7,18 @@ SwiperCore.use([Autoplay]);
 
 function Brands() {
 
+  const { productData } = useContext(shopContext)
   const [brands, setBrands] = useState([]);
-  const [allProduct, setAllProduct] = useState(ProductsData);
-
-  const filterBrands = allProduct.filter(
-    (discount) => discount.categories === "brands"
-  );
 
   useEffect(() => {
-    setBrands(filterBrands);
-  }, [allProduct]);
+
+    if(productData){
+      const filterBrands = productData.filter(
+        (discount) => discount.categories === "brands"
+      );
+      setBrands(filterBrands);
+    }
+  }, [productData]);
 
   return (
     <section className="brands bg-white mt-10">

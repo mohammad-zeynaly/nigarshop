@@ -1,18 +1,16 @@
 import React, { useState, useContext } from "react";
 import { shopContext } from "../../contexts/shopContext";
-import ProductData from "../../data/ProductData";
 import { toast } from "react-toastify";
 
 function CardHoc(OriginalComponent) {
   function NewComponent() {
-    const [allProduct, setAllProduct] = useState(ProductData);
 
-    const { userCart, setUserCart } = useContext(shopContext);
+    const { productData,userCart, setUserCart } = useContext(shopContext);
 
     // Add Product To User Cart
     const addProductToCart = (productId) => {
       
-      const mainProduct = allProduct.find(
+      const mainProduct = productData.find(
         (product) => product.id === productId
       );
 

@@ -9,9 +9,9 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "watch": "npx tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/app.css --watch"
-
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.21.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",

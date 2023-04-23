@@ -1,26 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import CardHoc from "../../components/HOC/CardHoc";
-import ProductsData from "../../data/ProductData";
+import { shopContext } from "../../contexts/shopContext";
 import ProductCategoryMenu from "./ProductCategoryMenu";
 import ProductCategoryItem from "./ProductCategoryItem";
 
 function ProductCategory({ addProductToCart }) {
 
   const params = useParams();
-  const [allProducts, setAllProduct] = useState(ProductsData);
+  const { productData } = useContext(shopContext);
   const [activeMenuItem, setActiveMenuItem] = useState(0);
 
   const [categoryProduct, setCategoryProduct] = useState([]);
 
-  // Filtering Products
-  const mainProducts = allProducts.filter(
-    (product) => product.categories === params.productType
-  );
-
   useEffect(() => {
-    setCategoryProduct(mainProducts);
-  }, [allProducts, params]);
+    if (productData) {
+      // Filtering Products
+      const mainProducts = productData.filter(
+        (product) => product.categories === params.productType
+      );
+      setCategoryProduct(mainProducts);
+    }
+  }, [productData, params]);
 
   const menuIemHandler = (item) => {
     setActiveMenuItem(item);
@@ -45,12 +46,11 @@ function ProductCategory({ addProductToCart }) {
             />
           </ul>
         </div>
-        
+
         <ProductCategoryItem
           categoryProduct={categoryProduct}
           addProductToCart={addProductToCart}
         />
-
       </div>
     </section>
   );
