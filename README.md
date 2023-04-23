@@ -9,16 +9,18 @@
 
 * fully responsive for mobile, tablet, laptop and desktop
 * In this project, the functional component is fully used
+* All product information and other site information come from supabase database
 
 ---
 
 ## web development technologies
-* tailwindcss  
-* reactjs
-* react-router
-* react-toastify
-* react-icons
-* swiper
+* Tailwindcss  
+* Reactjs
+* React-router
+* React-toastify
+* React-icons
+* Swiper
+* Supabase
 
 ---
 
