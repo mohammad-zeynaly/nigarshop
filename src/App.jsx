@@ -25,7 +25,7 @@ function App() {
   }, [overlayRef]);
 
   useEffect(() => {
-    fetchGetRequest()
+    fetchGetRequest();
   }, []);
 
   const fetchGetRequest = async () => {

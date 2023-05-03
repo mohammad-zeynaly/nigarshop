@@ -12,7 +12,6 @@ function NewProduct({ addProductToCart }) {
 
   const { productData } = useContext(shopContext);
   const [newProducts, setNewProducts] = useState([]);
-  const [allProduct, setAllProduct] = useState([]);
 
   useEffect(() => {
     if (productData) {
