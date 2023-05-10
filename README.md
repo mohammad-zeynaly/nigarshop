@@ -2,7 +2,7 @@
 ---
 
 # nigarshop.com/fa page front-end
-## [review online](https://nigarshop.netlify.app)
+## [review online](https://mohammad-zeynali.github.io/nigarshop/)
 
 ---
 ## tips

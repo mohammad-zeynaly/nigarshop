@@ -8,6 +8,7 @@ function ProductCategoryItem({ categoryProduct, addProductToCart }) {
           key={product.id}
           onAddProduct={addProductToCart}
           {...product}
+          isDotUrlImg={true}
         ></ProductItem>
       ))}
     </div>

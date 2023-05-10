@@ -11,14 +11,14 @@ function ProductItem (props) {
         props.onAddProduct(id)
     }
 
-    let{id,img,name,price} = props;
+    let{id,img,name,price,isDotUrlImg} = props;
 
     return(
         <>
         <div className="flex flex-col bg-white rounded-[20px]">
         <Link className="flex flex-col " to={`/productDetails/${id}`}>
         <div className="w-[13rem] xl:w-56 mx-auto my-4">
-            <img className="w-full object-cover" src={img} alt="عکس محصول"/>
+            <img className="w-full object-cover" src={`${isDotUrlImg ? '.' + img : img}`} alt="عکس محصول"/>
         </div>
         </Link>
         <div className="max-w-[16rem] mx-auto text-center">

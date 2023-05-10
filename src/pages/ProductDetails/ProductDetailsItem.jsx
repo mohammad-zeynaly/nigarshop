@@ -53,7 +53,7 @@ const ProductDetailsItem = ({ productDetail }) => {
       <div className="w-full lg:w-1/4">
         <img
           className="object-cover w-full"
-          src={productDetail.img}
+          src={`.${productDetail.img}`}
           alt="product image"
         />
       </div>

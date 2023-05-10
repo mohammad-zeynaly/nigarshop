@@ -10,7 +10,7 @@ import AllProducts from "./pages/AllProducts/AllProducts";
 
 let routes = [
     
-    {path: '/nigarshop',element: <Home />},
+    {path: '/',element: <Home />},
     {path:'/productCategory/:productType',element:<ProductCategory />},
     {path:'/productDetails/:productId',element: <ProductDetails/>},
     {path:'/myAccount',element: <MyAccount/>},
