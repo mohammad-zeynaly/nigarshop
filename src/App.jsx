@@ -8,6 +8,7 @@ import BottomMenu from "./components/BottomMenu/BottomMenu";
 import { shopContext } from "./contexts/shopContext";
 import ToastBox from "./components/Toast/Toast";
 import "./styles/app.css";
+import allProductData from "../../data/ProductData";
 
 function App() {
   const routers = useRoutes(routes);
@@ -38,6 +39,17 @@ function App() {
     }
   };
 
+
+  
+
+  // console.log(fetchGetRequest())
+
+  useEffect(() => {
+    console.log("productData=> ",productData)
+  },[productData])
+
+
+
   return (
     <shopContext.Provider
       value={{
@@ -66,7 +78,8 @@ function App() {
         location.pathname === "/search" ? (
           ""
         ) : (
-          <Footer />
+          
+            <Footer />
         )}
         <BottomMenu />
       </div>

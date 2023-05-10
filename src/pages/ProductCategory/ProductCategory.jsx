@@ -6,7 +6,6 @@ import ProductCategoryMenu from "./ProductCategoryMenu";
 import ProductCategoryItem from "./ProductCategoryItem";
 
 function ProductCategory({ addProductToCart }) {
-
   const params = useParams();
   const { productData } = useContext(shopContext);
   const [activeMenuItem, setActiveMenuItem] = useState(0);
@@ -23,8 +22,46 @@ function ProductCategory({ addProductToCart }) {
     }
   }, [productData, params]);
 
-  const menuIemHandler = (item) => {
-    setActiveMenuItem(item);
+  const menuIemHandler = (itemType, itemName) => {
+    const filteredProducts = productData.filter(
+      (product) => product.type === "product"
+    );
+
+    setActiveMenuItem(itemType);
+    console.log(itemName);
+
+    switch (itemName) {
+      case "گران‌ترین": {
+        const orderingCategory = filteredProducts.filter(
+          (product) => product.price > 4_000_000
+        );
+        setCategoryProduct(orderingCategory);
+        break;
+      }
+      case "ارزان‌ترین": {
+        const orderingCategory = filteredProducts.filter(
+          (product) => product.price < 4_000_000
+        );
+        setCategoryProduct(orderingCategory);
+        break;
+      }
+      case "جدیدترین": {
+        const orderingCategory = filteredProducts.filter(
+          (product) => product.categories === "discountProduct"
+        );
+        setCategoryProduct(orderingCategory);
+        break;
+      }
+
+      case "محبوب‌ترین": {
+        const orderingCategory = filteredProducts.filter(
+          (product) => product.popularity === true
+        );
+        setCategoryProduct(orderingCategory);
+        break;
+      }
+    }
+
   };
 
   return (
