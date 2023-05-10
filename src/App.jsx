@@ -8,7 +8,6 @@ import BottomMenu from "./components/BottomMenu/BottomMenu";
 import { shopContext } from "./contexts/shopContext";
 import ToastBox from "./components/Toast/Toast";
 import "./styles/app.css";
-import allProductData from "../../data/ProductData";
 
 function App() {
   const routers = useRoutes(routes);
