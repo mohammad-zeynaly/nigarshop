@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter basename="https://mohammad-zeynali.github.io/nigarshop/">
+  <BrowserRouter basename="/nigarshop">
     <App />
   </BrowserRouter>
 );
