@@ -23,12 +23,12 @@ function ProductCategory({ addProductToCart }) {
   }, [productData, params]);
 
   const menuIemHandler = (itemType, itemName) => {
+    
     const filteredProducts = productData.filter(
       (product) => product.type === "product"
     );
 
     setActiveMenuItem(itemType);
-    console.log(itemName);
 
     switch (itemName) {
       case "گران‌ترین": {
