@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "watch": "npx tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/app.css --watch",
     "predeploy": "npm run build && cp ./404.html ./build",
-    "deploy": "gh-pages -d build"
+    "deploy": "master -d build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.21.0",
