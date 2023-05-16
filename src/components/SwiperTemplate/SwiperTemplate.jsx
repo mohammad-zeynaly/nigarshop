@@ -1,23 +1,29 @@
 import React from "react";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import "swiper/swiper.min.css";
+
 SwiperCore.use([Autoplay]);
 
 function SwiperTemplate({ products, ProductItem, onAddProduct, swiperClass }) {
   return (
     <Swiper
       spaceBetween={20}
-      slidesPerView={1}
+      slidesPerView="auto"
+      freeMode={false}
       loop={true}
-      effect="fade"
-      loopedSlides={50}
-      autoplay={{ delay: 5000, disableOnInteraction: false }}
+      grabCursor={true}
+      slidesPerGroup={1}
+      loopedSlides={products.length}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+        reverseDirection: true,
+      }}
       breakpoints={{
         1250: {
           slidesPerView: 4,
         },
-
         992: {
           slidesPerView: 3,
         },
@@ -28,6 +34,11 @@ function SwiperTemplate({ products, ProductItem, onAddProduct, swiperClass }) {
           slidesPerView: 1.6,
         },
       }}
+      threshold={20}
+      touchRatio={0.5}
+      touchStartPreventDefault={true}
+      touchMoveStopPropagation={true}
+      debug={true}
     >
       {products.map((product) => (
         <SwiperSlide

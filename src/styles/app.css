@@ -33,6 +33,11 @@
     url("../fonts/woff/IRANSans-Black.woff") format("woff");
 }
 
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
 .swiper-pagination-bullet {
   background: #fff;
   width: 10px;

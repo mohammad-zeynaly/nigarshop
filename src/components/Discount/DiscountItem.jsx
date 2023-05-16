@@ -14,14 +14,14 @@ function DiscountItem(props) {
 
   return (
     <>
-      <Link className="flex flex-col " to={`/productdetails/${props.id}`}>
+      <Link className="flex flex-col " to={`/productDetails/${props.id}`}>
         <div className="w-[13rem] xl:w-56 mx-auto">
           <img className="w-full object-cover" src={props.img} alt="عکس محصول" />
         </div>
       </Link>
       <div className="max-w-[16rem] mx-auto text-center">
         <Link
-          to={`/productdetails:/${props.id}`}
+          to={`/productDetails/${props.id}`}
           className="text-[#666] hover:text-[#D60000]"
         >
           <h4 className="text-sm font-iranSansBold">{props.name}</h4>
