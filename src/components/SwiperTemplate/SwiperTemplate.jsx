@@ -4,15 +4,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 SwiperCore.use([Autoplay]);
 
-
-function SwiperTemplate({ products, ProductItem, onAddProduct,swiperClass }) {
-
+function SwiperTemplate({ products, ProductItem, onAddProduct, swiperClass }) {
   return (
     <Swiper
       spaceBetween={20}
       slidesPerView={1}
       loop={true}
-      grabCursor={true}
+      effect="fade"
+      loopedSlides={50}
       autoplay={{ delay: 5000, disableOnInteraction: false }}
       breakpoints={{
         1250: {
@@ -31,13 +30,15 @@ function SwiperTemplate({ products, ProductItem, onAddProduct,swiperClass }) {
       }}
     >
       {products.map((product) => (
-        <SwiperSlide className={swiperClass ? swiperClass : ""} key={product.id}>
+        <SwiperSlide
+          className={swiperClass ? swiperClass : ""}
+          key={product.id}
+        >
           <ProductItem onAddProduct={onAddProduct} {...product} />
         </SwiperSlide>
       ))}
     </Swiper>
   );
-
 }
 
 export default SwiperTemplate;
