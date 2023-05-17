@@ -7,7 +7,10 @@ SwiperCore.use([Autoplay]);
 
 function SwiperTemplate({ products, ProductItem, onAddProduct, swiperClass }) {
   return (
+
     <Swiper
+    className="overflow-hidden"
+      dir="ltr"
       spaceBetween={20}
       slidesPerView="auto"
       freeMode={false}
@@ -34,11 +37,8 @@ function SwiperTemplate({ products, ProductItem, onAddProduct, swiperClass }) {
           slidesPerView: 1.6,
         },
       }}
-      threshold={20}
+      threshold={10}
       touchRatio={0.5}
-      touchStartPreventDefault={true}
-      touchMoveStopPropagation={true}
-      debug={true}
     >
       {products.map((product) => (
         <SwiperSlide
