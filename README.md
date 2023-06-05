@@ -20,7 +20,7 @@
 * React-toastify
 * React-icons
 * Swiper
-* Supabase
+* Supabase 
 
 ---
 
@@ -40,4 +40,3 @@
 * *[email](mailto:051.mhmdzynaly977@gmail.com)*
 * *[telegram](https://t.me/zeynali2003/)*
 * *[instagram](https://instagram.com/zeynali2003/)*
-
