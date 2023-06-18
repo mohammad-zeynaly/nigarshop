@@ -15,7 +15,7 @@ function ShoppingCart() {
   const persian = new Intl.NumberFormat("fa");
   const [cartItems, setCartItems] = useState([]);
 
-  const { productData,userCart, setUserCart } = useContext(shopContext);
+  const { productData, userCart, setUserCart } = useContext(shopContext);
 
   useEffect(() => {
     setCartItems(userCart);

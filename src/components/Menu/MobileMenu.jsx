@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { shopContext } from "../../contexts/shopContext"
+import { shopContext } from "../../contexts/shopContext";
 
 function MobileMenu() {
-
-    const { statusMenu } = useContext(shopContext)
+  const { statusMenu } = useContext(shopContext);
 
   return (
     <ul
@@ -29,6 +28,5 @@ function MobileMenu() {
     </ul>
   );
 }
-
 
 export default MobileMenu;

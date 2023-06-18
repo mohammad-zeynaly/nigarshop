@@ -7,9 +7,8 @@ SwiperCore.use([Autoplay]);
 
 function SwiperTemplate({ products, ProductItem, onAddProduct, swiperClass }) {
   return (
-
     <Swiper
-    className="overflow-hidden"
+      className="overflow-hidden"
       dir="ltr"
       spaceBetween={20}
       slidesPerView="auto"

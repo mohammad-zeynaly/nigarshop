@@ -38,16 +38,9 @@ function App() {
     }
   };
 
-
-  
-
-  // console.log(fetchGetRequest())
-
   useEffect(() => {
-    console.log("productData=> ",productData)
-  },[productData])
-
-
+    console.log("productData=> ", productData);
+  }, [productData]);
 
   return (
     <shopContext.Provider
@@ -77,8 +70,7 @@ function App() {
         location.pathname === "/search" ? (
           ""
         ) : (
-          
-            <Footer />
+          <Footer />
         )}
         <BottomMenu />
       </div>

@@ -8,7 +8,7 @@ import { shopContext } from "../../contexts/shopContext";
 const ProductDetailsItem = ({ productDetail }) => {
   const persian = new Intl.NumberFormat("fa");
   const [count, setCount] = useState(1);
-  const { productData,userCart, setUserCart } = useContext(shopContext);
+  const { productData, userCart, setUserCart } = useContext(shopContext);
 
   // Add Product To cart
   const addProductToUserCart = (productId) => {

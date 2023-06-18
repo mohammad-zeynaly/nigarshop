@@ -28,7 +28,6 @@ function ProductDetails() {
             <div className="bg-white p-4 my-8 rounded-[20px] text-[#666]">
               <h3 className="text-lg">توضیحات محصول</h3>
               <span className="mt-4 text-[15px] ">
-                {" "}
                 نقد و بررسی تخصصی محصولات مختلف در این بخش
               </span>
               <p className="my-2 text-sm leading-7">

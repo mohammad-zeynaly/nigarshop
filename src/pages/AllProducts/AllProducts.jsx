@@ -5,7 +5,6 @@ import ProductItem from "../../components/ProductItem/ProductItem";
 import { Link } from "react-router-dom";
 
 function AllProducts({ addProductToCart }) {
-  
   const { productData } = useContext(shopContext);
   const [productsArray, setProdcutArray] = useState();
   const [currenPage, setCurrenPage] = useState(1);
@@ -32,9 +31,9 @@ function AllProducts({ addProductToCart }) {
 
     setPaginatedProduct(allShownProducts);
   };
-let pageNumbers;
-  if(productsArray){
-     pageNumbers = Array.from(
+  let pageNumbers;
+  if (productsArray) {
+    pageNumbers = Array.from(
       Array(Math.ceil(productsArray.length / pageSize)).keys()
     );
   }
@@ -57,19 +56,20 @@ let pageNumbers;
           ))}
         </div>
         <div className="flex justify-center items-center my-12">
-          {pageNumbers && pageNumbers.map((paginated) => (
-            <Link
-              key={paginated + 1}
-              className={`${
-                paginated + 1 === currenPage
-                  ? "bg-primary text-white"
-                  : "bg-white"
-              } py-2 px-4 rounded-[10px] ml-4 `}
-              onClick={() => changePaginatedProduct(paginated + 1)}
-            >
-              {paginated + 1}
-            </Link>
-          ))}
+          {pageNumbers &&
+            pageNumbers.map((paginated) => (
+              <Link
+                key={paginated + 1}
+                className={`${
+                  paginated + 1 === currenPage
+                    ? "bg-primary text-white"
+                    : "bg-white"
+                } py-2 px-4 rounded-[10px] ml-4 `}
+                onClick={() => changePaginatedProduct(paginated + 1)}
+              >
+                {paginated + 1}
+              </Link>
+            ))}
         </div>
       </div>
     </section>

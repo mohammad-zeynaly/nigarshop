@@ -23,8 +23,7 @@ function Discount({ addProductToCart }) {
         <div className="container">
           <div className="py-3">
             <h2 className="text-white text-center text-3xl my-5 font-iranSansBold">
-              {" "}
-              زنگ تخفیفه!{" "}
+              زنگ تخفیفه!
             </h2>
 
             <SwiperTemplate

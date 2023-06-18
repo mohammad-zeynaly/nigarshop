@@ -1,16 +1,13 @@
-import { useState, useEffect,useContext } from "react";
-import {shopContext} from "../../contexts/shopContext";
+import { useState, useEffect, useContext } from "react";
+import { shopContext } from "../../contexts/shopContext";
 import AdsItem from "./AdsItem";
 
 function Ads() {
-
-  const { productData }= useContext(shopContext)
+  const { productData } = useContext(shopContext);
   const [adsItems, setAdsItems] = useState([]);
 
- 
-
   useEffect(() => {
-    if(productData){
+    if (productData) {
       const filterAds = productData.filter(
         (discount) => discount.categories === "adsItems"
       );
@@ -29,7 +26,6 @@ function Ads() {
       </div>
     </section>
   );
-  
 }
 
 export default Ads;

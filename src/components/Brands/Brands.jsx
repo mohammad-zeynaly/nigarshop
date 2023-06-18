@@ -1,4 +1,4 @@
-import { useState, useEffect,useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { shopContext } from "../../contexts/shopContext";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,13 +6,11 @@ import "swiper/css";
 SwiperCore.use([Autoplay]);
 
 function Brands() {
-
-  const { productData } = useContext(shopContext)
+  const { productData } = useContext(shopContext);
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
-
-    if(productData){
+    if (productData) {
       const filterBrands = productData.filter(
         (discount) => discount.categories === "brands"
       );
@@ -48,13 +46,15 @@ function Brands() {
             }}
           >
             {brands.map((brand) => (
-
               <SwiperSlide className="my-2  flex justify-center" key={brand.id}>
                 <div className="w-28">
-                  <img className="w-full object-cover" src={brand.img} alt="brands image"/>
+                  <img
+                    className="w-full object-cover"
+                    src={brand.img}
+                    alt="brands image"
+                  />
                 </div>
               </SwiperSlide>
-
             ))}
           </Swiper>
         </div>

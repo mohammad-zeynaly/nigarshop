@@ -23,7 +23,6 @@ function ProductCategory({ addProductToCart }) {
   }, [productData, params]);
 
   const menuIemHandler = (itemType, itemName) => {
-    
     const filteredProducts = productData.filter(
       (product) => product.type === "product"
     );
@@ -61,7 +60,6 @@ function ProductCategory({ addProductToCart }) {
         break;
       }
     }
-
   };
 
   return (

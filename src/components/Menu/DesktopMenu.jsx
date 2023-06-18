@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function DesktopMenu() {
-    
   const [menuItems, setMenuItems] = useState([
     { id: 1, title: "صفحه اصلی", href: "/" },
     { id: 2, title: "کالای دیجیتال", href: "/productCategory/discountProduct" },
@@ -27,7 +26,6 @@ function DesktopMenu() {
       ))}
     </ul>
   );
-
 }
 
 export default DesktopMenu;

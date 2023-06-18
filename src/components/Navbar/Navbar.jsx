@@ -8,7 +8,6 @@ import MobileMenu from "../Menu/MobileMenu";
 import UserBasket from "./UserBasket";
 
 function Navbar() {
-    
   //Context
   const { statusMenu, setStatusMenu } = useContext(shopContext);
 
@@ -17,7 +16,6 @@ function Navbar() {
       <nav className="mt-6">
         <div className="container">
           <div className="flex flex-row-reverse lg:flex-row justify-between items-center">
-
             <span
               className="lg:hidden cursor-pointer"
               onClick={() => setStatusMenu((prevStatus) => !prevStatus)}
@@ -47,9 +45,12 @@ function Navbar() {
 
             {/* brand Logo */}
             <Link to="/" className="w-32 lg:hidden">
-              <img className="w-full object-cover " src="./assets/images/negarshop-logo.png" alt="لوگو سایت"/>
+              <img
+                className="w-full object-cover "
+                src="./assets/images/negarshop-logo.png"
+                alt="لوگو سایت"
+              />
             </Link>
-
           </div>
         </div>
       </nav>

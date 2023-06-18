@@ -4,12 +4,10 @@ import { toast } from "react-toastify";
 
 function CardHoc(OriginalComponent) {
   function NewComponent() {
-
-    const { productData,userCart, setUserCart } = useContext(shopContext);
+    const { productData, userCart, setUserCart } = useContext(shopContext);
 
     // Add Product To User Cart
     const addProductToCart = (productId) => {
-      
       const mainProduct = productData.find(
         (product) => product.id === productId
       );
@@ -19,13 +17,10 @@ function CardHoc(OriginalComponent) {
       );
 
       if (!shoppingCartProduct) {
-
         setUserCart((prevProduct) => {
           return [...prevProduct, mainProduct];
         });
-
       } else {
-
         let shoppingCartProduct = [...userCart];
 
         shoppingCartProduct.some((product) => {

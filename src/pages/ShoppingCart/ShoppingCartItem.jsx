@@ -9,7 +9,7 @@ function ShoppingCartItem(props) {
 
   const removeProductInCart = (productId) => {
     props.onRemove(productId);
-  };  
+  };
 
   useEffect(() => {
     console.log("Updated UserCart=> ", userCart);
