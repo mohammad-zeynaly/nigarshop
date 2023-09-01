@@ -73,7 +73,6 @@ function ShoppingCart() {
               <div className="bg-[#F5F5F5] mt-8 p-4 rounded-[20px] text-center">
                 <h5 className="text-[#999]">مجموع کل سبد خرید</h5>
                 <h6 className="mt-4 text-[15px]">
-                  {" "}
                   قیمت کل:
                   <span> {persian.format(totalCartPrice)} تومان </span>
                 </h6>

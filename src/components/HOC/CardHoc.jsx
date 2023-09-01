@@ -25,6 +25,7 @@ function CardHoc(OriginalComponent) {
 
         shoppingCartProduct.some((product) => {
           if (product.name === mainProduct.name) {
+            // if()
             product.count += 1;
             return true;
           }

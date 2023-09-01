@@ -6,16 +6,18 @@ import routes from "./routes";
 import Footer from "./components/Footer/Footer";
 import BottomMenu from "./components/BottomMenu/BottomMenu";
 import { shopContext } from "./contexts/shopContext";
+import { ShopContextProvider } from "./contexts/shopContext";
 import ToastBox from "./components/Toast/Toast";
 import "./styles/app.css";
 
 function App() {
   const routers = useRoutes(routes);
   const location = useLocation();
+  const overlayRef = useRef();
 
+  // states
   const [userCart, setUserCart] = useState([]);
   const [statusMenu, setStatusMenu] = useState(false);
-  const overlayRef = useRef();
   const [productData, setProductData] = useState();
 
   useEffect(() => {
@@ -43,8 +45,8 @@ function App() {
   }, [productData]);
 
   return (
-    <shopContext.Provider
-      value={{
+    <ShopContextProvider
+      allStates={{
         productData,
         userCart,
         setUserCart,
@@ -75,7 +77,7 @@ function App() {
         <BottomMenu />
       </div>
       <ToastBox />
-    </shopContext.Provider>
+    </ShopContextProvider>
   );
 }
 

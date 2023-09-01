@@ -20,9 +20,11 @@ function ShoppingCartItem(props) {
     const updatedUserCart = userCart.map((productCart) => {
       if (cartProductId === productCart.id) {
         if (counterType === "plus") {
-          return { ...productCart, count: currenCount + 1 };
+          if (productCart.count < 10)
+            return { ...productCart, count: currenCount + 1 };
         } else if (counterType === "minus") {
-          return { ...productCart, count: currenCount - 1 };
+          if (productCart.count > 0)
+            return { ...productCart, count: currenCount - 1 };
         }
       }
       return productCart;
